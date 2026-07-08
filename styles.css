@@ -141,36 +141,145 @@ section { padding: 4.5rem 0; }
     align-items: center;
 }
 
-.hero-demo .demo-grid {
-    grid-template-columns: 1fr;
-    gap: .35rem;
-}
-
-.hero-demo .sync-badge {
-    color: #fff;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    padding: .15rem 0;
-}
-
-.hero-demo .sync-arrows { transform: rotate(90deg); font-size: 1.6rem; animation: sync-pulse 1.5s ease-in-out infinite; }
-
-.hero-demo .demo-body { min-height: 8rem; font-size: .82rem; padding: .8rem 1rem; }
-
-.hero-demo .ps1-report-body { min-height: 8rem; font-size: .8rem; }
-
-.hero-demo .ps1-fieldlist { font-size: .58rem; line-height: 1.7; }
-
 .hero-demo .voice-bubble { margin-bottom: .8rem; font-size: .88rem; min-height: 2.1rem; }
+
+.hero-demo .voice-bubble kbd { background: #fff; color: var(--secondary); border: none; }
 
 .hero-demo .demo-caption { color: rgba(255, 255, 255, .85); margin-top: .9rem; font-size: .76rem; }
 
-.hero-demo .demo-label { padding: .45rem 1rem .6rem; font-size: .74rem; }
+/* --- hero stage: one PowerScribe window + the floating Dictum companion panel --- */
+.ps-stage { position: relative; padding: 0 1rem 2.4rem 0; }
+
+.ps-stage .ps1-window { box-shadow: 0 24px 60px rgba(1, 3, 38, .35); }
+
+.ps-stage .ps1-report-body { min-height: 15.5rem; font-size: .8rem; line-height: 1.55; }
+
+.ps-stage .ps1-report-body p { margin: 0 0 .5rem; }
+
+.dictum-panel {
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+    width: 236px;
+    background: #f3edde;
+    /* the app's actual warm theme */
+    border-radius: .6rem;
+    overflow: hidden;
+    box-shadow: 0 18px 44px rgba(1, 3, 38, .45);
+    font-size: .72rem;
+    color: #5a4a3a;
+}
+
+.dp-titlebar {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .4rem .6rem;
+    background: #e8e1d1;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: .74rem;
+}
+
+.dp-chip {
+    margin-left: auto;
+    background: #d3c8b0;
+    color: #5a4a3a;
+    border-radius: 999px;
+    padding: .08rem .5rem;
+    font-weight: 600;
+    font-size: .62rem;
+    white-space: nowrap;
+}
+
+.dp-chip.rec {
+    background: #c0392b;
+    color: #fff;
+    animation: mic-pulse 1.6s ease-in-out infinite;
+}
+
+.dp-chip.ai { background: #8a6d1a; color: #fff; }
+
+.dp-body { padding: .55rem .65rem .6rem; }
+
+.dp-btnrow { display: flex; align-items: center; gap: .45rem; margin-bottom: .5rem; }
+
+.dp-btn {
+    width: 32px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #d3c8b0;
+    border-radius: .35rem;
+    font-size: .85rem;
+}
+
+.dp-btn.rec { background: #c0392b; border-color: #c0392b; }
+
+.dp-keys { margin-left: auto; color: #8a7a64; }
+
+.dp-keys kbd { font-size: .62rem; padding: 0 .3rem; background: #fff; border-color: #d3c8b0; }
+
+.dp-check { line-height: 1.7; white-space: nowrap; }
+
+.dp-status {
+    margin-top: .45rem;
+    padding-top: .4rem;
+    border-top: 1px dashed #d3c8b0;
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: .66rem;
+}
+
+/* --- autocomplete popup at the caret, inside the PowerScribe mock --- */
+.ac-anchor { position: relative; display: inline-block; width: 0; height: 0; }
+
+.ac-pop {
+    position: absolute;
+    left: -2px;
+    top: .45rem;
+    z-index: 5;
+    display: block;
+    width: max-content;
+    background: #fff;
+    border: 1px solid #b9bfc9;
+    border-radius: .35rem;
+    box-shadow: 0 10px 26px rgba(1, 3, 38, .28);
+    padding: .15rem 0;
+    font-family: var(--font-body);
+    font-size: .72rem;
+    line-height: 1.55;
+}
+
+.ac-item { display: block; padding: .05rem .6rem; color: #333; }
+
+.ac-item b { font-weight: 700; color: var(--heading); }
+
+.ac-item.ac-sel { background: var(--primary); color: #fff; }
+
+.ac-item.ac-sel b { color: #fff; }
+
+.ac-hint {
+    display: block;
+    margin-top: .15rem;
+    padding: .15rem .6rem 0;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: .6rem;
+}
 
 @media (max-width: 1000px) {
     .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+    .ps-stage { max-width: 34rem; margin: 0 auto; }
+}
+
+@media (max-width: 560px) {
+    .ps-stage { padding: 0 0 .5rem; }
+
+    .dictum-panel { position: static; margin: .7rem auto 0; }
 }
 
 .kicker {
@@ -201,6 +310,39 @@ section { padding: 4.5rem 0; }
     font-size: 1.15rem;
     color: rgba(255, 255, 255, .92);
     max-width: 34rem;
+}
+
+/* The impression feature gets its own hero billing — it can sell the app alone */
+.hero-impression {
+    display: flex;
+    gap: .8rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, .13);
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: .8rem;
+    padding: .9rem 1.1rem;
+    margin-top: 1.3rem;
+    max-width: 34rem;
+    font-size: .98rem;
+    color: rgba(255, 255, 255, .92);
+}
+
+.hero-impression p { margin: 0; }
+
+.hero-impression .hi-icon { font-size: 1.35rem; line-height: 1.3; }
+
+.hero-impression strong {
+    display: block;
+    margin-bottom: .15rem;
+    color: #fff;
+    font-family: var(--font-display);
+}
+
+.hero-impression kbd {
+    background: #fff;
+    color: var(--primary-lo);
+    border: none;
+    font-weight: 700;
 }
 
 .hero-actions {
@@ -477,6 +619,7 @@ section { padding: 4.5rem 0; }
     line-height: 1.5;
     min-height: 12.5rem;
     flex: 1;
+    color: #2b2b2b;
 }
 
 .ps1-report-body p { margin: 0 0 .65rem; }

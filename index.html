@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Radiology Report — Dictum</title>
     <meta name="description"
-        content="A free PowerScribe companion for radiologists: consistent offline dictation, voice-driven report templates, and autocomplete that learns your phrasing. PHI never leaves your machine.">
+        content="A free PowerScribe companion for radiologists: a drop-in replacement for the PowerScribe microphone with a consistent offline speech engine, autocomplete inside the report, and one-keypress impression drafting. PHI never leaves your machine.">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
@@ -37,11 +37,18 @@
             <p class="kicker">Dictum — a free companion for PowerScribe&reg;</p>
             <h1>If you use PowerScribe, you should be using <em>this</em>.</h1>
             <p class="lede">
-                Dictate with the plugin — a modern offline engine that hears you the same way
-                every time — and the open PowerScribe report receives every word in real-time
-                sync. Templates fill by voice, autocomplete learns how <strong>you</strong>
-                write, and nothing ever leaves your workstation.
+                A drop-in replacement for the PowerScribe microphone. Press <strong>F9</strong> —
+                or the PowerMic button already in your hand — and a modern offline speech engine
+                puts the words straight into the open report, while autocomplete finishes your
+                sentences right in PowerScribe. Nothing you dictate ever leaves your workstation.
             </p>
+            <div class="hero-impression">
+                <span class="hi-icon">&#10024;</span>
+                <p><strong>Press <kbd>F10</kbd> — your impression writes itself.</strong>
+                    An on-device medical AI drafts the IMPRESSION from the findings you just
+                    dictated — your own words, synthesized on your workstation, placed in the
+                    report as a draft for your review.</p>
+            </div>
             <div class="hero-actions">
                 <a class="btn btn-light-solid" href="#download">Download for Windows</a>
                 <a class="btn btn-ghost" href="#why">Why switch?</a>
@@ -49,9 +56,151 @@
             <p class="hero-fineprint">Free during the pilot &middot; 64-bit Windows 10/11 &middot; no admin rights needed</p>
         </div>
 
-        <!-- Live-sync demo: dictation in the plugin, PowerScribe receives it -->
+        <!-- Minimal-mode demo: you work in PowerScribe; Dictum is the small panel -->
         <div class="hero-demo">
             <div class="voice-bubble"><span class="voice-mic">&#127908;</span> <span id="voice-text">&nbsp;</span></div>
+
+            <div class="ps-stage">
+                <div class="demo-pane ps1-window">
+                    <div class="ps1-titlebar">
+                        <span class="ps1-logo"></span>Nuance PowerScribe One
+                        <span class="ps1-winbtns"><span>&#8212;</span><span>&#9633;</span><span>&#10005;</span></span>
+                    </div>
+                    <div class="ps1-menubar">File&ensp;Edit&ensp;View&ensp;Insert&ensp;Format&ensp;Tools&ensp;Speech&ensp;Help</div>
+                    <div class="ps1-toolbar">
+                        <span>&#10005; Close</span><span>&#9998; Draft</span><span>&#10003; Sign</span>
+                        <span class="ps1-sep"></span>
+                        <span>AutoText &#9662;</span>
+                        <span class="ps1-sep"></span>
+                        <span><b>B</b></span><span><i>I</i></span><span><u>U</u></span>
+                        <span class="ps1-clock">00:00 - 00:00</span>
+                    </div>
+                    <div class="ps1-main">
+                        <div class="ps1-report">
+                            <div class="ps1-report-head">Report &#8211;</div>
+                            <div class="ps1-report-body" id="hero-ps"></div>
+                        </div>
+                    </div>
+                    <div class="ps1-statusbar">User: ABAJIAN&ensp;&#124;&ensp;Drafts: 7&ensp;&#124;&ensp;Overreader: None selected</div>
+                </div>
+
+                <div class="dictum-panel" aria-hidden="true">
+                    <div class="dp-titlebar">Dictum
+                        <span class="dp-chip" id="hero-chip">mic off &middot; F9</span>
+                    </div>
+                    <div class="dp-body">
+                        <div class="dp-btnrow">
+                            <span class="dp-btn" id="hero-micbtn">&#127908;</span>
+                            <span class="dp-btn" id="hero-aibtn">&#10024;</span>
+                            <span class="dp-keys"><kbd>F9</kbd> <kbd>F10</kbd></span>
+                        </div>
+                        <div class="dp-check">&#9745; Dictate into PowerScribe</div>
+                        <div class="dp-check">&#9745; Autocomplete in PowerScribe</div>
+                        <div class="dp-check">&#9745; Draft impression into PowerScribe</div>
+                        <div class="dp-status">&#9679; Attached to PowerScribe</div>
+                    </div>
+                </div>
+            </div>
+            <p class="demo-caption">Simulated demonstration. You keep working in PowerScribe — Dictum is the
+                small always-on-top panel. Text enters the report only when you press the button.</p>
+        </div>
+        </div>
+    </header>
+
+    <!-- ============================== Pain points ============================== -->
+    <section id="why">
+        <div class="container">
+            <p class="section-kicker">Sound familiar?</p>
+            <h2 class="section-title">Built against PowerScribe's oldest complaints</h2>
+
+            <div class="card-row">
+                <article class="pain-card">
+                    <p class="pain-quote">&ldquo;I dictated the exact same sentence I say twenty times a day. Different text. Again.&rdquo;</p>
+                    <h3>Say it the same, get the same</h3>
+                    <p>Dictum replaces the microphone, not your workflow: press <strong>F9</strong> — or the
+                        record button on the PowerMic already in your hand — and the words land straight in
+                        the open PowerScribe report. Behind it is a <strong>modern transformer speech
+                        model</strong> (Parakeet-TDT) with deterministic decoding: no voice profile to train,
+                        no profile to drift or corrupt — <strong>the same utterance produces the same
+                        text</strong>, with punctuation and measurements formatted the way radiologists
+                        write them.</p>
+                </article>
+
+                <article class="pain-card">
+                    <p class="pain-quote">&ldquo;It still doesn't know the words I use every single day.&rdquo;</p>
+                    <h3>Autocomplete, right in the report</h3>
+                    <p>Start a word in PowerScribe and a suggestion popup follows your caret —
+                        <kbd>Tab</kbd> accepts, <kbd>Esc</kbd> dismisses. Dictum quietly learns your
+                        vocabulary and phrasing from the reports you write — <strong>locally, on disk you
+                        control</strong> — so after a few days your own sentences finish themselves. A
+                        curated radiology corpus covers the rest.</p>
+                </article>
+
+                <article class="pain-card">
+                    <p class="pain-quote">&ldquo;I just spent five minutes describing it. Now I get to summarize it all over again.&rdquo;</p>
+                    <h3>Impressions draft themselves</h3>
+                    <p>Press <strong>F10</strong> and an <strong>on-device medical language model</strong>
+                        drafts the IMPRESSION from the findings you just dictated — a diagnostic synthesis
+                        of your own words, never a finding you didn't make and never an unsolicited
+                        recommendation. It lands in the report as a draft for your review; you edit and
+                        sign exactly as you do today.</p>
+                </article>
+            </div>
+
+            <div class="card-row secondary-row">
+                <article class="mini-card">
+                    <h4>Drop-in, not rip-out</h4>
+                    <p>PowerScribe and Dragon stay exactly as they are. Every Dictum feature is a checkbox —
+                        untick them all and you're back to stock in one second.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>PowerMic ready</h4>
+                    <p>The record button on your existing PowerMic drives Dictum — press-and-hold or
+                        toggle, your choice. No new hardware on the desk.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>Made for reading rooms</h4>
+                    <p>A compact, always-on-top panel in a warm, low-glare theme that sits politely
+                        next to your PACS monitors and stays out of the way.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== Trust strip ============================== -->
+    <section id="trust" class="bg-gradient-dark">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="trust-num">0</div>
+                <p><strong>bytes of PHI leave your machine.</strong> No cloud, no login, no telemetry.
+                    The speech model, the impression model, and everything the app learns live on your disk.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">1</div>
+                <p><strong>file to install.</strong> Download, double-click, done. No installer wizard,
+                    no admin rights, no IT ticket.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">0</div>
+                <p><strong>changes to your sign-off.</strong> PowerScribe remains the system of record.
+                    Dictum only ever writes into the report on your explicit action — a button you press,
+                    a key you hit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== Coming soon: the Dictum editor ============================== -->
+    <section id="coming-soon" class="bg-white-section">
+        <div class="container">
+            <p class="section-kicker">Coming soon</p>
+            <h2 class="section-title">Next up: dictation software of its own —<br>fully backwards-compatible with PowerScribe</h2>
+            <p class="demo-lede">The same engine, grown into a complete report editor: templates,
+                tab-navigable fields, voice-driven picklists, and crash-proof drafts — speaking
+                PowerScribe's native report format. It stays in live two-way sync with the open report,
+                and finished reports land back in PowerScribe <strong>with their fields still
+                live</strong>, so you keep signing exactly where you sign today.</p>
+
+            <div class="voice-bubble"><span class="voice-mic">&#127908;</span> <span id="cs-voice">&nbsp;</span></div>
 
             <div class="demo-grid">
                 <div class="demo-pane plugin-pane">
@@ -103,88 +252,8 @@
                         nothing about your sign-off workflow changes</div>
                 </div>
             </div>
-            <p class="demo-caption">Simulated demonstration. Sync runs both ways — edits in either window
-                mirror to the other, and writing into PowerScribe only happens when you say so.</p>
-        </div>
-        </div>
-    </header>
-
-    <!-- ============================== Pain points ============================== -->
-    <section id="why">
-        <div class="container">
-            <p class="section-kicker">Sound familiar?</p>
-            <h2 class="section-title">Built against PowerScribe's oldest complaints</h2>
-
-            <div class="card-row">
-                <article class="pain-card">
-                    <p class="pain-quote">&ldquo;I dictated the exact same sentence I say twenty times a day. Different text. Again.&rdquo;</p>
-                    <h3>Say it the same, get the same</h3>
-                    <p>PowerScribe's recognizer leans on a per-user voice profile that drifts, degrades,
-                        and eventually needs retraining. Dictum uses a <strong>modern transformer
-                        speech model</strong> (Parakeet-TDT) with deterministic decoding: no profile to
-                        train, no profile to corrupt — <strong>the same utterance produces the same
-                        text</strong>, with punctuation and measurements formatted the way radiologists
-                        write them. It decodes a five-second utterance in about half a second on an
-                        ordinary CPU.</p>
-                </article>
-
-                <article class="pain-card">
-                    <p class="pain-quote">&ldquo;AutoText was clearly designed by someone who never dictated a case.&rdquo;</p>
-                    <h3>Templates that fill themselves out</h3>
-                    <p><strong>Import your own PowerScribe AutoText in one click</strong> — or start from
-                        the built-in template library. Every field is tab-navigable, picklists pop up with
-                        the default preselected, and voice commands drive it all: say
-                        <em>&ldquo;next field&rdquo;</em>, speak an option, keep dictating. Finished reports
-                        paste back into PowerScribe <strong>with the fields still live</strong>.</p>
-                </article>
-
-                <article class="pain-card">
-                    <p class="pain-quote">&ldquo;It still doesn't know the words I use every single day.&rdquo;</p>
-                    <h3>Autocomplete that learns you</h3>
-                    <p>The app quietly learns your vocabulary and phrasing from the reports you sign —
-                        locally, on disk you control. Type three letters and your own sentence finishes itself.
-                        A curated radiology corpus covers the rest, ranked by the section you're writing in.</p>
-                </article>
-            </div>
-
-            <div class="card-row secondary-row">
-                <article class="mini-card">
-                    <h4>Live mirror</h4>
-                    <p>The open report mirrors into the plugin in real time — fields, lists, formatting —
-                        and stays read-only unless you say otherwise. Dictation in PowerScribe always wins.</p>
-                </article>
-                <article class="mini-card">
-                    <h4>Crash-proof drafts</h4>
-                    <p>Work is autosaved every few seconds with full field fidelity. Kill the app, lose power,
-                        reboot — your draft comes back with tab navigation intact.</p>
-                </article>
-                <article class="mini-card">
-                    <h4>Made for reading rooms</h4>
-                    <p>A warm, low-glare theme that sits politely next to your PACS monitors, resizable,
-                        with your font and size remembered.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================== Trust strip ============================== -->
-    <section id="trust" class="bg-gradient-dark">
-        <div class="container trust-grid">
-            <div class="trust-item">
-                <div class="trust-num">0</div>
-                <p><strong>bytes of PHI leave your machine.</strong> No cloud, no login, no telemetry.
-                    The speech model, your templates, and everything the app learns live on your disk.</p>
-            </div>
-            <div class="trust-item">
-                <div class="trust-num">2</div>
-                <p><strong>files to install.</strong> Unzip, double-click, done. No installer,
-                    no admin rights, no IT ticket.</p>
-            </div>
-            <div class="trust-item">
-                <div class="trust-num">1</div>
-                <p><strong>workflow — yours.</strong> PowerScribe remains the system of record.
-                    The plugin mirrors, assists, and only writes back when you tell it to.</p>
-            </div>
+            <p class="demo-caption">Simulated preview of the upcoming editor. Sync runs both ways — edits in
+                either window mirror to the other, and writing into PowerScribe only happens when you say so.</p>
         </div>
     </section>
 
@@ -221,7 +290,7 @@
                 <ol class="install-steps">
                     <li><strong>Run</strong> <code>Dictum.exe</code> — it sets itself up in seconds and starts. It finds your open PowerScribe report by itself.</li>
                     <li><strong>Accept the one-time model download</strong> (~3&nbsp;GB) when prompted, and let it finish in the background.</li>
-                    <li><strong>Dictate.</strong> Press <kbd>F9</kbd> and talk; <kbd>F10</kbd> drafts your impression. Updates arrive automatically.</li>
+                    <li><strong>Dictate.</strong> Press <kbd>F9</kbd> (or your PowerMic button) and talk; <kbd>F10</kbd> drafts your impression. Updates arrive automatically.</li>
                 </ol>
             </div>
         </div>
@@ -244,12 +313,162 @@
     </footer>
 
     <script>
-        // ---- Live-sync demo: voice fills PowerScribe One's bracketed fields; the plugin
-        // pane mirrors every state one 250 ms "sync tick" behind. Pure simulation. ----
+        // ---- Hero demo: minimal mode. You work in PowerScribe; Dictum is the small
+        // companion panel. Dictation, autocomplete, and the impression draft all land
+        // directly in the PowerScribe window. Pure simulation. ----
+        (function () {
+            const ps = document.getElementById('hero-ps');
+            const voice = document.getElementById('voice-text');
+            const chip = document.getElementById('hero-chip');
+            const micbtn = document.getElementById('hero-micbtn');
+            const aibtn = document.getElementById('hero-aibtn');
+            if (!ps || !voice || !chip) return;
+
+            const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+            const CARET = '<span class="caret"></span>';
+
+            const st = { findings: [], typing: '', ac: null, impression: null, fSel: false, impSel: false };
+
+            function acHtml() {
+                if (!st.ac) return '';
+                const items = st.ac.map((t, i) =>
+                    `<span class="ac-item${i === 0 ? ' ac-sel' : ''}">${t}</span>`).join('');
+                return `<span class="ac-anchor"><span class="ac-pop">${items}<span class="ac-hint">Tab accepts &middot; Esc dismisses</span></span></span>`;
+            }
+
+            const BR = c => `<span class="d-br">${c}</span>`;
+
+            function render(caretAt) { // 'findings' | 'impression' | null
+                let f = st.findings.join(' ');
+                if (f && st.typing) f += ' ';
+                // PowerScribe AutoText fields: the familiar red brackets persist when
+                // filled — dictating into a field replaces its value, never its anchors.
+                const findingsBody = (f || st.typing)
+                    ? BR('[') + '<span class="d-val">' + esc(f) + esc(st.typing) + '</span>'
+                        + (caretAt === 'findings' ? CARET : '') + acHtml() + BR(']')
+                    : `<span class="d-fld${st.fSel ? ' d-sel' : ''}">[findings]</span>`;
+                const impBody = st.impression !== null
+                    ? BR('[') + '<span class="d-val">' + esc(st.impression) + '</span>'
+                        + (caretAt === 'impression' ? CARET : '') + BR(']')
+                    : `<span class="d-fld${st.impSel ? ' d-sel' : ''}">[impression]</span>`;
+                let html = '<p><span class="d-lbl d-heading">EXAM:</span> CT abdomen and pelvis with IV contrast.</p>';
+                html += '<p><span class="d-lbl d-heading">FINDINGS:</span></p>';
+                html += '<p>' + findingsBody + '</p>';
+                html += '<p><span class="d-lbl d-heading">IMPRESSION:</span></p>';
+                html += '<p>' + impBody + '</p>';
+                ps.innerHTML = html;
+            }
+
+            function micOn() {
+                chip.textContent = '● Recording';
+                chip.classList.add('rec');
+                micbtn.classList.add('rec');
+            }
+            function micOff() {
+                chip.innerHTML = 'mic off &middot; F9';
+                chip.classList.remove('rec');
+                micbtn.classList.remove('rec');
+            }
+
+            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (reduced) { // static final frame, no animation
+                st.findings = [
+                    'The gallbladder is distended with diffuse wall thickening.',
+                    'There is an obstructing calculus in the gallbladder neck measuring 1.2 cm.',
+                    'Trace pericholecystic fluid.'
+                ];
+                st.impression = '1. Acute calculous cholecystitis.';
+                render(null);
+                voice.textContent = 'You dictate; the words land directly in PowerScribe. F10 drafts the impression.';
+                return;
+            }
+
+            const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+            async function run() {
+                st.findings = []; st.typing = ''; st.ac = null;
+                st.impression = null; st.fSel = false; st.impSel = false;
+                render(null);
+                voice.innerHTML = '&nbsp;';
+                micOff();
+                await sleep(1000);
+
+                // the findings field is selected — dictation will replace its value
+                st.fSel = true;
+                render(null);
+                await sleep(900);
+
+                // 1–2: dictation lands straight in the report
+                const utterances = [
+                    { say: '“the gallbladder is distended with diffuse wall thickening”',
+                      text: 'The gallbladder is distended with diffuse wall thickening.' },
+                    { say: '“there is an obstructing calculus in the gallbladder neck measuring one point two centimeters”',
+                      text: 'There is an obstructing calculus in the gallbladder neck measuring 1.2 cm.' },
+                ];
+                for (const u of utterances) {
+                    micOn();
+                    voice.textContent = u.say;
+                    await sleep(700);
+                    st.fSel = false;
+                    st.typing = '';
+                    for (const w of u.text.split(/(?<= )/)) {
+                        st.typing += w;
+                        render('findings');
+                        await sleep(140);
+                    }
+                    st.findings.push(st.typing); st.typing = '';
+                    micOff();
+                    render('findings');
+                    await sleep(1000);
+                }
+
+                // 3: autocomplete follows your caret inside PowerScribe
+                voice.innerHTML = '&#9000;&#65039; or keep typing — autocomplete follows you into PowerScribe';
+                await sleep(700);
+                for (const ch of 'Trace peric') {
+                    st.typing += ch;
+                    render('findings');
+                    await sleep(95);
+                }
+                st.ac = ['peric<b>holecystic fluid</b>', 'peric<b>ardial effusion</b>', 'peric<b>ecal inflammation</b>'];
+                render('findings');
+                await sleep(1600);
+                voice.innerHTML = '<kbd>Tab</kbd> — accepted';
+                st.ac = null;
+                st.typing = 'Trace pericholecystic fluid.';
+                render('findings');
+                st.findings.push(st.typing); st.typing = '';
+                await sleep(1300);
+
+                // 4: F10 drafts the impression from the findings (buffered, then placed)
+                voice.innerHTML = '<kbd>F10</kbd> — draft the impression from your findings';
+                chip.textContent = '✨ drafting impression…';
+                chip.classList.add('ai');
+                aibtn.classList.add('rec');
+                st.impSel = true;
+                render(null);
+                await sleep(2200);
+                st.impSel = false;
+                st.impression = '1. Acute calculous cholecystitis.';
+                chip.classList.remove('ai');
+                micOff();
+                aibtn.classList.remove('rec');
+                render(null);
+                voice.textContent = '— a draft of your own findings, made on your workstation. You review, you sign.';
+                await sleep(6000);
+                run(); // loop
+            }
+            run();
+        })();
+
+        // ---- Coming-soon demo: the upcoming Dictum editor. Voice fills bracketed
+        // fields in the editor; the PowerScribe mock mirrors every state one 250 ms
+        // "sync tick" behind. Pure simulation. ----
         (function () {
             const ps = document.getElementById('demo-ps');
             const plugin = document.getElementById('demo-plugin');
-            const voice = document.getElementById('voice-text');
+            const voice = document.getElementById('cs-voice');
             if (!ps || !plugin || !voice) return;
 
             const makeFields = () => ([
@@ -290,7 +509,7 @@
                 done[2].value = 'There is a 3.5 x 2 cm cyst.';
                 ps.innerHTML = renderPS(done);
                 plugin.innerHTML = renderPlugin(done);
-                voice.textContent = 'You dictate in the plugin; PowerScribe receives the report in real time.';
+                voice.textContent = 'You dictate in the editor; PowerScribe receives the report in real time.';
                 return;
             }
 
@@ -299,7 +518,7 @@
             async function run() {
                 const fields = makeFields();
                 const queue = [];
-                // You dictate in the PLUGIN (left, leads); PowerScribe follows one sync tick behind.
+                // You dictate in the EDITOR (left, leads); PowerScribe follows one sync tick behind.
                 const push = () => { plugin.innerHTML = renderPlugin(fields); queue.push(renderPS(fields)); };
                 const sync = setInterval(() => { if (queue.length) ps.innerHTML = queue.shift(); }, 250);
 

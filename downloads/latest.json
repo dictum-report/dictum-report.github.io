@@ -1,17 +1,17 @@
 {
-    "version": "1.2.7.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.7.0.exe",
+    "version": "1.2.8.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.8.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.7.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.7.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.8.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.8.0.exe"
     ],
-    "exeSha256": "4211F7A1FD02D798A0AE7C0A61B32FA91DB984F280F5AF7C424F15C26A92138A",
+    "exeSha256": "45FE56242F69A0F421C1284246CA8EC662D5C63C0FED0E8153AE880DE1A09898",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.7.0.zip",
-    "zipSha256": "C455A69D8B7B79A6ED26FBCEF41C12A61BE42DDF140409DD93F5AFF295C3A8E8",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.8.0.zip",
+    "zipSha256": "941381F48EF79A16E96008C6C62B6AF6620E18719741CA9F8953059F5A7916A3",
     "zipSizeMB": 3087,
-    "notes": "PowerMic fix: the mic is now detected by its device name (PowerMicII-NS etc.) - open \"Set up PowerMic button\" in the panel, press the Record button, and save. Also: the compact panel is now fixed-size.",
-    "publishedUtc": "2026-07-08T22:15:09.3285687Z",
+    "notes": "PowerMic diagnostics build: if your PowerMic is not detected, the log now records every input device on the system - send it in and the fix is usually a settings tweak.",
+    "publishedUtc": "2026-07-08T22:28:56.2143397Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
