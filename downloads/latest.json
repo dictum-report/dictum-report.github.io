@@ -1,17 +1,17 @@
 {
-    "version": "1.2.3.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.3.0.exe",
+    "version": "1.2.4.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.4.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.3.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.3.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.4.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.4.0.exe"
     ],
-    "exeSha256": "491FB7612FE23CBB54D7F64F3AB9FE43B78AA4AF75A118DE751E68F1D2469A1B",
+    "exeSha256": "6DCFAD2421DB711B7FCFBF2BBA78056EEDDA1A25C7DD03E2131932CEB13FCD36",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.3.0.zip",
-    "zipSha256": "CBC574E9E8400FA6ECEEC4EDC20C053D6CF96C5650760D2C5FD97A710DD4B460",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.4.0.zip",
+    "zipSha256": "CD4A50C8BCE7EE11324535DFF3386C052509A32577CAAEAEE93BBFB0A57CF765",
     "zipSizeMB": 3087,
-    "notes": "",
-    "publishedUtc": "2026-07-08T19:02:23.2409108Z",
+    "notes": "New compact companion panel (the full editor is now hidden by default). Dictate (F9) and impression (F10) into PowerScribe are enabled by default - each has an off switch in the panel, and hotkeys are remappable in settings.json.",
+    "publishedUtc": "2026-07-08T20:30:02.5655288Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
