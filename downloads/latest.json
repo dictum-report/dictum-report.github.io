@@ -5,13 +5,13 @@
         "https://dictum.report/downloads/Dictum-v1.2.9.0.exe",
         "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.9.0.exe"
     ],
-    "exeSha256": "670FF97C9D743B62C12D66F689F9B27C08FF03BEEDE51E39AD2459CBFD86E608",
+    "exeSha256": "F9DFFBA523885457D33E9B4DA44EBC364B0BCBABE8E49AA20EDFA37D388C9D36",
     "exeSizeMB": 81,
     "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.9.0.zip",
-    "zipSha256": "A3FF096C6D99AE7EE16CE7B2A011226F238D56E117B714A5EA8E3BFCA59D4812",
+    "zipSha256": "26E40F4FB91B6ABC68DCA03026D3DB60D3E8ED2FECC2327B464B0EB7BA35DB8A",
     "zipSizeMB": 3087,
-    "notes": "PowerMic detection rebuilt: three underlying device-scan bugs fixed. Update, open \"Set up PowerMic button\", and press Record.",
-    "publishedUtc": "2026-07-08T22:41:01.8741023Z",
+    "notes": "New compact widget design + PowerMic detection rebuilt (three device-scan bugs fixed). After updating, open \"Set up PowerMic button\" from the panel and press Record on the mic.",
+    "publishedUtc": "2026-07-08T22:54:00.3504380Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
