@@ -1,17 +1,17 @@
 {
-    "version": "1.2.5.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.5.0.exe",
+    "version": "1.2.6.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.6.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.5.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.5.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.6.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.6.0.exe"
     ],
-    "exeSha256": "26C267ED09BF667CFB1039D946C7F2912057570336122971F06FC71D06342B7A",
+    "exeSha256": "F3A58EC924A1D6CD339DDAC5BEB436A557D4033A2B5E3113026FC2630797620E",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.5.0.zip",
-    "zipSha256": "0868030496CB859B62C51F481BF9DB874C02C9DDFFCD1FC133AAE08CAD46E7EE",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.6.0.zip",
+    "zipSha256": "D76C409ABF34299F2F78922B908C3A194A57E5841F4BD8BA678989E9EB8AD582",
     "zipSizeMB": 3087,
-    "notes": "Dictation upgrade: punctuation is now verbatim (say \"period\" for a period; nothing you did not say is inserted), dictating over a highlighted field value replaces it, and the PowerMic record button controls the mic (press-and-hold; the first button you press is learned as Record).",
-    "publishedUtc": "2026-07-08T21:16:23.7237042Z",
+    "notes": "Dictation refinements from field feedback: mid-sentence dictation no longer capitalizes (say \"period\" to end a sentence), dictating over a highlighted field replaces it, and the new \"Set up PowerMic button\" dialog (in the panel) lets you choose which mic button controls dictation - press-and-hold or tap.",
+    "publishedUtc": "2026-07-08T22:05:16.6796295Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
