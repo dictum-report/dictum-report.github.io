@@ -27,12 +27,13 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* 17px root: every rem-based size on the page (copy, cards, demos) scales up ~6% */
+html { scroll-behavior: smooth; font-size: 106.25%; }
 
 body {
     margin: 0;
     font-family: var(--font-body);
-    font-size: 1.06rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text);
     background-color: var(--body-bg);

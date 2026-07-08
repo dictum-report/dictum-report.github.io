@@ -1,17 +1,17 @@
 {
-    "version": "1.2.9.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.9.0.exe",
+    "version": "1.2.10.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.10.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.9.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.9.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.10.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.10.0.exe"
     ],
-    "exeSha256": "F9DFFBA523885457D33E9B4DA44EBC364B0BCBABE8E49AA20EDFA37D388C9D36",
+    "exeSha256": "46C5757FC489CA9935A5D2A5FF306715A1438E7C1B97855A242C25536F76E2B9",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.9.0.zip",
-    "zipSha256": "26E40F4FB91B6ABC68DCA03026D3DB60D3E8ED2FECC2327B464B0EB7BA35DB8A",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.10.0.zip",
+    "zipSha256": "85182CB88A61E3F105985B9692FD866AB65287E01AAD8835C4B8278ED5644491",
     "zipSizeMB": 3087,
-    "notes": "New compact widget design + PowerMic detection rebuilt (three device-scan bugs fixed). After updating, open \"Set up PowerMic button\" from the panel and press Record on the mic.",
-    "publishedUtc": "2026-07-08T22:54:00.3504380Z",
+    "notes": "PowerMic button capture fix: the record button should now register in \"Set up PowerMic button\". Press Record there, save, and hold-to-dictate.",
+    "publishedUtc": "2026-07-08T23:01:10.7970070Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
