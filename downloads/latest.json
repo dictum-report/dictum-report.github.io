@@ -1,17 +1,17 @@
 {
-    "version": "1.2.6.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.6.0.exe",
+    "version": "1.2.7.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.7.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.6.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.6.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.7.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.7.0.exe"
     ],
-    "exeSha256": "F3A58EC924A1D6CD339DDAC5BEB436A557D4033A2B5E3113026FC2630797620E",
+    "exeSha256": "4211F7A1FD02D798A0AE7C0A61B32FA91DB984F280F5AF7C424F15C26A92138A",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.6.0.zip",
-    "zipSha256": "D76C409ABF34299F2F78922B908C3A194A57E5841F4BD8BA678989E9EB8AD582",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.7.0.zip",
+    "zipSha256": "C455A69D8B7B79A6ED26FBCEF41C12A61BE42DDF140409DD93F5AFF295C3A8E8",
     "zipSizeMB": 3087,
-    "notes": "Dictation refinements from field feedback: mid-sentence dictation no longer capitalizes (say \"period\" to end a sentence), dictating over a highlighted field replaces it, and the new \"Set up PowerMic button\" dialog (in the panel) lets you choose which mic button controls dictation - press-and-hold or tap.",
-    "publishedUtc": "2026-07-08T22:05:16.6796295Z",
+    "notes": "PowerMic fix: the mic is now detected by its device name (PowerMicII-NS etc.) - open \"Set up PowerMic button\" in the panel, press the Record button, and save. Also: the compact panel is now fixed-size.",
+    "publishedUtc": "2026-07-08T22:15:09.3285687Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
