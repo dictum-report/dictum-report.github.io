@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Radiology Report — Dictum</title>
+    <title>Dictum — a free companion for PowerScribe</title>
     <meta name="description"
         content="A free PowerScribe companion for radiologists: a drop-in replacement for the PowerScribe microphone with a consistent offline speech engine, autocomplete inside the report, and one-keypress impression drafting. PHI never leaves your machine.">
 
@@ -27,14 +27,14 @@
         <nav class="hero-nav">
             <a class="brand" href="/">
                 <img src="media/logo.svg" alt="" width="34" height="34">
-                <span>My Radiology Report</span>
+                <span>Dictum</span>
             </a>
             <a class="nav-download" href="#download">Download</a>
         </nav>
 
         <div class="hero-inner">
         <div class="hero-copy">
-            <p class="kicker">Dictum — a free companion for PowerScribe&reg;</p>
+            <p class="kicker">A free companion for PowerScribe&reg;</p>
             <h1>If you use PowerScribe, you should be using <em>this</em>.</h1>
             <p class="lede">
                 A drop-in replacement for the PowerScribe microphone. Press <strong>F9</strong> —
@@ -164,6 +164,15 @@
                         next to your PACS monitors and stays out of the way.</p>
                 </article>
             </div>
+
+            <p class="research-note">
+                &#128196; Peer-reviewed roots: Dictum builds on its author's commentary in
+                <em>Radiology: Artificial Intelligence</em> —
+                <a href="https://pubs.rsna.org/doi/10.1148/ryai.220105" target="_blank" rel="noopener">
+                    &ldquo;No Knew Typos: Modernizing Radiology Dictation&rdquo;</a> (RSNA, 2022) —
+                on using transformer language models to catch the errors radiology
+                speech recognition makes.
+            </p>
         </div>
     </section>
 
@@ -346,11 +355,11 @@
                 const findingsBody = (f || st.typing)
                     ? BR('[') + '<span class="d-val">' + esc(f) + esc(st.typing) + '</span>'
                         + (caretAt === 'findings' ? CARET : '') + acHtml() + BR(']')
-                    : `<span class="d-fld${st.fSel ? ' d-sel' : ''}">[findings]</span>`;
+                    : `<span class="d-fld${st.fSel ? ' d-sel' : ''}">[ ]</span>`;
                 const impBody = st.impression !== null
                     ? BR('[') + '<span class="d-val">' + esc(st.impression) + '</span>'
                         + (caretAt === 'impression' ? CARET : '') + BR(']')
-                    : `<span class="d-fld${st.impSel ? ' d-sel' : ''}">[impression]</span>`;
+                    : `<span class="d-fld${st.impSel ? ' d-sel' : ''}">[ ]</span>`;
                 let html = '<p><span class="d-lbl d-heading">EXAM:</span> CT abdomen and pelvis with IV contrast.</p>';
                 html += '<p><span class="d-lbl d-heading">FINDINGS:</span></p>';
                 html += '<p>' + findingsBody + '</p>';
@@ -475,7 +484,7 @@
                 { label: 'Liver', def: 'The liver size and echogenicity are within normal limits.', value: null, sel: false },
                 { label: 'Gallbladder', def: 'Gallbladder is within normal limits.', value: null, sel: false },
                 { label: 'Right Kidney', def: 'Normal size. No hydronephrosis.', value: null, sel: false },
-                { label: 'IMPRESSION', def: 'impression', value: null, sel: false, heading: true },
+                { label: 'IMPRESSION', def: ' ', value: null, sel: false, heading: true },
             ]);
 
             function renderPS(fields) {

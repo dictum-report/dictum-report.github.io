@@ -1,17 +1,17 @@
 {
-    "version": "1.2.8.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.8.0.exe",
+    "version": "1.2.9.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.9.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.8.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.8.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.9.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.9.0.exe"
     ],
-    "exeSha256": "45FE56242F69A0F421C1284246CA8EC662D5C63C0FED0E8153AE880DE1A09898",
+    "exeSha256": "670FF97C9D743B62C12D66F689F9B27C08FF03BEEDE51E39AD2459CBFD86E608",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.8.0.zip",
-    "zipSha256": "941381F48EF79A16E96008C6C62B6AF6620E18719741CA9F8953059F5A7916A3",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.9.0.zip",
+    "zipSha256": "A3FF096C6D99AE7EE16CE7B2A011226F238D56E117B714A5EA8E3BFCA59D4812",
     "zipSizeMB": 3087,
-    "notes": "PowerMic diagnostics build: if your PowerMic is not detected, the log now records every input device on the system - send it in and the fix is usually a settings tweak.",
-    "publishedUtc": "2026-07-08T22:28:56.2143397Z",
+    "notes": "PowerMic detection rebuilt: three underlying device-scan bugs fixed. Update, open \"Set up PowerMic button\", and press Record.",
+    "publishedUtc": "2026-07-08T22:41:01.8741023Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",

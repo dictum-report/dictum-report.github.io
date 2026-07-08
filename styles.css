@@ -707,6 +707,15 @@ section { padding: 4.5rem 0; }
     color: var(--text);
 }
 
+.research-note {
+    text-align: center;
+    max-width: 44rem;
+    margin: 2.4rem auto 0;
+    font-size: .92rem;
+}
+
+.research-note a { color: var(--primary); font-weight: 600; }
+
 /* ------------------------------ Trust strip ------------------------------ */
 .bg-gradient-dark {
     background: linear-gradient(180deg, var(--secondary-hi), var(--secondary)) repeat-x;
