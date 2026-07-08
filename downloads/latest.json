@@ -1,17 +1,17 @@
 {
-    "version": "1.2.10.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.10.0.exe",
+    "version": "1.2.11.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.11.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.10.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.10.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.11.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.11.0.exe"
     ],
-    "exeSha256": "323E2323DBC51E01D8170DF6D3900EDB33B7174CD4C8D3ED1167C8931EBEC3E6",
+    "exeSha256": "F4F7467B06763BD6F4FB7581A27B06C01E11D7AF4E9E0C86D04CEBF09360C47E",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.10.0.zip",
-    "zipSha256": "6EA2EF9D2B238BA3153B15038CA3A2982255398762C2EFB6ACECCFB05E4B64BF",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.11.0.zip",
+    "zipSha256": "87DCB2E1AADCD21431FB27920A2BB929E27714E9C0C5DD8BEA70CE9F4A6AC704",
     "zipSizeMB": 3087,
-    "notes": "PowerMic button capture fix: the record button should now register in \"Set up PowerMic button\". Press Record there, save, and hold-to-dictate. Plus widget design refinements.",
-    "publishedUtc": "2026-07-08T23:06:52.8558007Z",
+    "notes": "Fixes from field testing: releasing the PowerMic record button now reliably stops recording (your last words still get transcribed), and impression drafting works even when GPU acceleration cannot load (falls back to CPU automatically).",
+    "publishedUtc": "2026-07-08T23:20:49.8089750Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
