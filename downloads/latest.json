@@ -1,17 +1,17 @@
 {
-    "version": "1.2.12.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.12.0.exe",
+    "version": "1.2.13.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.13.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.12.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.12.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.13.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.13.0.exe"
     ],
-    "exeSha256": "D2CE669B54D2703CBE3C410A822D06FD68A7A36DF4CBC803C934E35AE0A230F3",
+    "exeSha256": "9202744F5860D678B1030A3AC6D1E3CD095F858D78619DA30FDCF65BAAC95E67",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.12.0.zip",
-    "zipSha256": "8C8CF4244E6B4131FEA8E1AD03905FAF97C2CF4D6D7257C40579681C16C32D2B",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.13.0.zip",
+    "zipSha256": "DD38F872D270FFA62C5C603284AF637AA43DF7CAED32B59AA31FDD990769CDBB",
     "zipSizeMB": 3107,
-    "notes": "GPU acceleration for (almost) every workstation: impression drafting now uses your graphics card via Vulkan when CUDA is unavailable - including older NVIDIA drivers, AMD, and Intel. After updating, run File > Download AI Models once to fetch the small (20 MB) GPU runtime.",
-    "publishedUtc": "2026-07-08T23:31:13.2217805Z",
+    "notes": "Dictum now keeps itself up to date automatically when opened, and the speech + impression engines warm up in the background after launch - the first press of F9/F10 is instant.",
+    "publishedUtc": "2026-07-08T23:53:50.1635909Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",

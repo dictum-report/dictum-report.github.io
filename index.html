@@ -273,13 +273,13 @@
                     <h2>Get Dictum</h2>
                     <p class="dl-meta">
                         <span id="dl-version">Version 1.2.0</span> &middot;
-                        <span id="dl-size">~300 KB</span> &middot; 64-bit Windows 10/11 &middot;
+                        <span id="dl-size">~50 KB</span> &middot; 64-bit Windows 10/11 &middot;
                         no admin rights needed
                     </p>
-                    <a id="dl-button" class="btn btn-primary btn-xl" href="downloads/Dictum.exe">
+                    <a id="dl-button" class="btn btn-primary btn-xl" href="downloads/Dictum.zip">
                         Download&nbsp;Dictum
                     </a>
-                    <p class="dl-hash">SHA-256: <code id="dl-sha">published in downloads/latest.json</code></p>
+                    <p class="dl-hash">SHA-256 (Dictum.exe inside the zip): <code id="dl-sha">published in downloads/latest.json</code></p>
                     <p class="dl-note">
                         Dictum installs for your user account only — nothing system-wide, no IT
                         ticket. On first launch it fetches the app and offers a one-time download
@@ -296,7 +296,7 @@
                     </p>
                 </div>
                 <ol class="install-steps">
-                    <li><strong>Run</strong> <code>Dictum.exe</code> — it sets itself up in seconds and starts. It finds your open PowerScribe report by itself.</li>
+                    <li><strong>Open</strong> <code>Dictum.zip</code> and run <code>Dictum.exe</code> inside — it sets itself up in seconds and starts. It finds your open PowerScribe report by itself.</li>
                     <li><strong>Accept the one-time model download</strong> (~3&nbsp;GB) when prompted, and let it finish in the background.</li>
                     <li><strong>Dictate.</strong> Press <kbd>F9</kbd> (or your PowerMic button) and talk; <kbd>F10</kbd> drafts your impression. Updates arrive automatically.</li>
                 </ol>
@@ -580,7 +580,7 @@
         const GH_DOWNLOAD = GH_RELEASES + '/latest/download';
         const onMirror = location.hostname.endsWith('.github.io');
         if (onMirror) {
-            document.getElementById('dl-button').href = GH_DOWNLOAD + '/Dictum.exe';
+            document.getElementById('dl-button').href = GH_DOWNLOAD + '/Dictum.zip';
             document.getElementById('adv-exe').href = GH_RELEASES;
             // The ~3 GB offline zip exceeds GitHub's asset limit and only lives on
             // dictum.report; keep it reachable (absolute) for non-blocked visitors.
