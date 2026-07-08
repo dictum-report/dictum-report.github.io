@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy — Dictum</title>
+    <link rel="icon" href="media/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+        .legal h1 { margin-bottom: .25em; }
+        .legal h2 { margin-top: 1.6em; font-size: 1.15rem; }
+        .legal p, .legal li { line-height: 1.6; }
+        .legal .updated { color: #666; font-size: .9em; margin-bottom: 2em; }
+        /* self-contained header (index's nav styling lives inside the hero gradient) */
+        .legal-nav { display: flex; align-items: center; justify-content: space-between;
+                     max-width: 760px; margin: 0 auto; padding: 18px 20px;
+                     border-bottom: 1px solid #e4e4e4; }
+        .legal-nav a { display: flex; align-items: center; gap: 8px; font-weight: 600;
+                       color: #010326; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="legal-nav">
+        <a href="index.html">
+            <img src="media/logo.svg" alt="" width="26" height="26"> Dictum
+        </a>
+        <a href="index.html#download">Download</a>
+    </nav>
+
+    <main class="legal">
+        <h1>Privacy statement</h1>
+        <p class="updated">Effective July 7, 2026</p>
+
+        <p><strong>The short version: your dictation, your reports, and your patients'
+        information never leave your workstation.</strong> Dictum was built by a
+        practicing radiologist specifically so that nothing you say or write requires a
+        cloud service to process it.</p>
+
+        <h2>What runs locally (everything)</h2>
+        <ul>
+            <li><strong>Speech recognition</strong> — the voice model runs on your
+                computer's own processor. Audio is never transmitted anywhere.</li>
+            <li><strong>Impression drafting</strong> — the AI language model that drafts
+                impressions from your findings runs entirely on your workstation. Report
+                text is never transmitted anywhere.</li>
+            <li><strong>Learned autocomplete</strong> — the phrases Dictum learns from
+                your reporting style are stored in a local file on your machine and are
+                never uploaded.</li>
+        </ul>
+        <p>Dictum has no user accounts, no telemetry, no analytics, and no crash
+        reporting. Its log files record technical events only (timings, byte counts,
+        error messages) — never report text or patient information.</p>
+
+        <h2>What touches the network</h2>
+        <ul>
+            <li><strong>Downloading Dictum and its AI models</strong> — from
+                dictum.report and public model mirrors (GitHub, Hugging Face, nuget.org).
+                Like any web download, those servers see your IP address and browser/app
+                version in standard server logs. No report content is ever involved.</li>
+            <li><strong>Update checks</strong> — once a day the app fetches a small text
+                file from dictum.report to learn whether a newer version exists. The
+                request carries no personal data.</li>
+        </ul>
+        <p>This website sets no cookies and runs no analytics.</p>
+
+        <h2>Data stored on your machine</h2>
+        <ul>
+            <li>Settings and logs: <code>%APPDATA%\Dictum</code></li>
+            <li>AI models and the installed app: <code>%LOCALAPPDATA%\Dictum</code></li>
+            <li>Learned phrases: <code>%APPDATA%\Dictum\user_phrases.json</code>
+                (clear via Tools → "Clear Learned Phrases…")</li>
+            <li>Draft recovery snapshots: kept locally, cleared on send or when compose
+                mode is turned off</li>
+        </ul>
+        <p>Uninstalling (Windows Settings → Apps → Dictum) removes the app and offers to
+        remove the downloaded models; deleting the two folders above removes every trace.</p>
+
+        <h2>Your responsibility as a clinician</h2>
+        <p>Dictum's AI drafts are suggestions for a qualified physician to review, edit,
+        and approve — you remain responsible for the final signed report. The impression
+        model (MedGemma, by Google) is used under the
+        <a href="https://developers.google.com/health-ai-developer-foundations/terms">Health
+        AI Developer Foundations terms</a>.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about privacy: <a href="mailto:aabajian@gmail.com">aabajian@gmail.com</a></p>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                <img src="media/logo.svg" alt="" width="20" height="20">
+                My Radiology Report &middot; built by a practicing radiologist
+            </p>
+            <p class="footer-small">
+                PowerScribe&reg; is a registered trademark of Nuance Communications, Inc.
+                This independent project is not affiliated with or endorsed by Nuance.
+                Dictum processes everything locally; this website sets no cookies.
+                &middot; <a href="privacy.html">Privacy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Radiology Report — Dictum</title>
+    <meta name="description"
+        content="A free PowerScribe companion for radiologists: consistent offline dictation, voice-driven report templates, and autocomplete that learns your phrasing. PHI never leaves your machine.">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="media/favicon/safari-pinned-tab.svg" color="#007bff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#007bff">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ============================== Hero ============================== -->
+    <header id="hero" class="bg-gradient-primary">
+        <nav class="hero-nav">
+            <a class="brand" href="/">
+                <img src="media/logo.svg" alt="" width="34" height="34">
+                <span>My Radiology Report</span>
+            </a>
+            <a class="nav-download" href="#download">Download</a>
+        </nav>
+
+        <div class="hero-inner">
+        <div class="hero-copy">
+            <p class="kicker">Dictum — a free companion for PowerScribe&reg;</p>
+            <h1>If you use PowerScribe, you should be using <em>this</em>.</h1>
+            <p class="lede">
+                Dictate with the plugin — a modern offline engine that hears you the same way
+                every time — and the open PowerScribe report receives every word in real-time
+                sync. Templates fill by voice, autocomplete learns how <strong>you</strong>
+                write, and nothing ever leaves your workstation.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-light-solid" href="#download">Download for Windows</a>
+                <a class="btn btn-ghost" href="#why">Why switch?</a>
+            </div>
+            <p class="hero-fineprint">Free during the pilot &middot; 64-bit Windows 10/11 &middot; no admin rights needed</p>
+        </div>
+
+        <!-- Live-sync demo: dictation in the plugin, PowerScribe receives it -->
+        <div class="hero-demo">
+            <div class="voice-bubble"><span class="voice-mic">&#127908;</span> <span id="voice-text">&nbsp;</span></div>
+
+            <div class="demo-grid">
+                <div class="demo-pane plugin-pane">
+                    <div class="editor-titlebar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="editor-title">Dictum</span>
+                        <span class="mic-chip">&#9679; Recording (F9)</span>
+                    </div>
+                    <div class="demo-body warm" id="demo-plugin"></div>
+                    <div class="demo-label"><strong>You dictate here</strong> — press F9 and talk: fields fill,
+                        picklists answer to your voice, measurements come out formatted</div>
+                </div>
+
+                <div class="sync-badge" aria-hidden="true">
+                    <span class="sync-arrows">&#8649;</span>
+                    <span class="sync-text">live sync &middot; 4&times;/second</span>
+                </div>
+
+                <div class="demo-pane ps1-window">
+                    <div class="ps1-titlebar">
+                        <span class="ps1-logo"></span>Nuance PowerScribe One
+                        <span class="ps1-winbtns"><span>&#8212;</span><span>&#9633;</span><span>&#10005;</span></span>
+                    </div>
+                    <div class="ps1-menubar">File&ensp;Edit&ensp;View&ensp;Insert&ensp;Format&ensp;Tools&ensp;Speech&ensp;Help</div>
+                    <div class="ps1-toolbar">
+                        <span>&#10005; Close</span><span>&#9998; Draft</span><span>&#10003; Sign</span>
+                        <span class="ps1-sep"></span>
+                        <span>AutoText &#9662;</span>
+                        <span class="ps1-sep"></span>
+                        <span><b>B</b></span><span><i>I</i></span><span><u>U</u></span>
+                        <span class="ps1-clock">00:00 - 00:00</span>
+                    </div>
+                    <div class="ps1-main">
+                        <aside class="ps1-sidebar">
+                            <div class="ps1-sidebar-head">Fields (62)</div>
+                            <div class="ps1-fieldlist">
+                                comparison<br>Technique<br>imabd_liver_length<br>imabd_liver_echotexture<br>
+                                imabd_liver_cmt<br>imabd_gallbladder_appear<br>imabd_gallbladder_stones<br>
+                                imabd_rt_kidney_size<br>imabd_rt_kidney_cmt<br>imabd_impression
+                            </div>
+                        </aside>
+                        <div class="ps1-report">
+                            <div class="ps1-report-head">Report &#8211;</div>
+                            <div class="ps1-report-body" id="demo-ps"></div>
+                        </div>
+                    </div>
+                    <div class="ps1-statusbar">User: ABAJIAN&ensp;&#124;&ensp;Drafts: 7&ensp;&#124;&ensp;Overreader: None selected</div>
+                    <div class="demo-label">PowerScribe receives the report with its fields still live —
+                        nothing about your sign-off workflow changes</div>
+                </div>
+            </div>
+            <p class="demo-caption">Simulated demonstration. Sync runs both ways — edits in either window
+                mirror to the other, and writing into PowerScribe only happens when you say so.</p>
+        </div>
+        </div>
+    </header>
+
+    <!-- ============================== Pain points ============================== -->
+    <section id="why">
+        <div class="container">
+            <p class="section-kicker">Sound familiar?</p>
+            <h2 class="section-title">Built against PowerScribe's oldest complaints</h2>
+
+            <div class="card-row">
+                <article class="pain-card">
+                    <p class="pain-quote">&ldquo;I dictated the exact same sentence I say twenty times a day. Different text. Again.&rdquo;</p>
+                    <h3>Say it the same, get the same</h3>
+                    <p>PowerScribe's recognizer leans on a per-user voice profile that drifts, degrades,
+                        and eventually needs retraining. Dictum uses a <strong>modern transformer
+                        speech model</strong> (Parakeet-TDT) with deterministic decoding: no profile to
+                        train, no profile to corrupt — <strong>the same utterance produces the same
+                        text</strong>, with punctuation and measurements formatted the way radiologists
+                        write them. It decodes a five-second utterance in about half a second on an
+                        ordinary CPU.</p>
+                </article>
+
+                <article class="pain-card">
+                    <p class="pain-quote">&ldquo;AutoText was clearly designed by someone who never dictated a case.&rdquo;</p>
+                    <h3>Templates that fill themselves out</h3>
+                    <p><strong>Import your own PowerScribe AutoText in one click</strong> — or start from
+                        the built-in template library. Every field is tab-navigable, picklists pop up with
+                        the default preselected, and voice commands drive it all: say
+                        <em>&ldquo;next field&rdquo;</em>, speak an option, keep dictating. Finished reports
+                        paste back into PowerScribe <strong>with the fields still live</strong>.</p>
+                </article>
+
+                <article class="pain-card">
+                    <p class="pain-quote">&ldquo;It still doesn't know the words I use every single day.&rdquo;</p>
+                    <h3>Autocomplete that learns you</h3>
+                    <p>The app quietly learns your vocabulary and phrasing from the reports you sign —
+                        locally, on disk you control. Type three letters and your own sentence finishes itself.
+                        A curated radiology corpus covers the rest, ranked by the section you're writing in.</p>
+                </article>
+            </div>
+
+            <div class="card-row secondary-row">
+                <article class="mini-card">
+                    <h4>Live mirror</h4>
+                    <p>The open report mirrors into the plugin in real time — fields, lists, formatting —
+                        and stays read-only unless you say otherwise. Dictation in PowerScribe always wins.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>Crash-proof drafts</h4>
+                    <p>Work is autosaved every few seconds with full field fidelity. Kill the app, lose power,
+                        reboot — your draft comes back with tab navigation intact.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>Made for reading rooms</h4>
+                    <p>A warm, low-glare theme that sits politely next to your PACS monitors, resizable,
+                        with your font and size remembered.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== Trust strip ============================== -->
+    <section id="trust" class="bg-gradient-dark">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="trust-num">0</div>
+                <p><strong>bytes of PHI leave your machine.</strong> No cloud, no login, no telemetry.
+                    The speech model, your templates, and everything the app learns live on your disk.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">2</div>
+                <p><strong>files to install.</strong> Unzip, double-click, done. No installer,
+                    no admin rights, no IT ticket.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">1</div>
+                <p><strong>workflow — yours.</strong> PowerScribe remains the system of record.
+                    The plugin mirrors, assists, and only writes back when you tell it to.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== Download ============================== -->
+    <section id="download">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-copy">
+                    <h2>Get Dictum</h2>
+                    <p class="dl-meta">
+                        <span id="dl-version">Version 1.2.0</span> &middot;
+                        <span id="dl-size">~300 KB</span> &middot; 64-bit Windows 10/11 &middot;
+                        no admin rights needed
+                    </p>
+                    <a id="dl-button" class="btn btn-primary btn-xl" href="downloads/Dictum.exe">
+                        Download&nbsp;Dictum
+                    </a>
+                    <p class="dl-hash">SHA-256: <code id="dl-sha">published in downloads/latest.json</code></p>
+                    <p class="dl-note">
+                        Dictum installs for your user account only — nothing system-wide, no IT
+                        ticket. On first launch it fetches the app and offers a one-time download
+                        of its on-device AI models (~3&nbsp;GB): the speech and impression AI live
+                        entirely on your workstation, so nothing you dictate ever leaves it.
+                    </p>
+                    <p class="dl-note" style="font-size:.85em">
+                        Advanced: <a id="adv-exe" href="downloads/latest.json">standalone full exe</a>
+                        &middot; <a id="adv-zip" href="downloads/Dictum-latest.zip">offline zip (~3&nbsp;GB, models included)</a>
+                    </p>
+                    <p class="dl-note" id="dl-mirror" style="font-size:.85em">
+                        Hospital network blocking this page or the download? Use the mirror:
+                        <a href="https://dictum-report.github.io">dictum-report.github.io</a>
+                    </p>
+                </div>
+                <ol class="install-steps">
+                    <li><strong>Run</strong> <code>Dictum.exe</code> — it sets itself up in seconds and starts. It finds your open PowerScribe report by itself.</li>
+                    <li><strong>Accept the one-time model download</strong> (~3&nbsp;GB) when prompted, and let it finish in the background.</li>
+                    <li><strong>Dictate.</strong> Press <kbd>F9</kbd> and talk; <kbd>F10</kbd> drafts your impression. Updates arrive automatically.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== Footer ============================== -->
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                <img src="media/logo.svg" alt="" width="20" height="20">
+                My Radiology Report &middot; built by a practicing radiologist
+            </p>
+            <p class="footer-small">
+                PowerScribe&reg; is a registered trademark of Nuance Communications, Inc.
+                This independent project is not affiliated with or endorsed by Nuance.
+                Dictum processes everything locally; this website sets no cookies.
+                &middot; <a href="privacy.html">Privacy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ---- Live-sync demo: voice fills PowerScribe One's bracketed fields; the plugin
+        // pane mirrors every state one 250 ms "sync tick" behind. Pure simulation. ----
+        (function () {
+            const ps = document.getElementById('demo-ps');
+            const plugin = document.getElementById('demo-plugin');
+            const voice = document.getElementById('voice-text');
+            if (!ps || !plugin || !voice) return;
+
+            const makeFields = () => ([
+                { label: 'Liver', def: 'The liver size and echogenicity are within normal limits.', value: null, sel: false },
+                { label: 'Gallbladder', def: 'Gallbladder is within normal limits.', value: null, sel: false },
+                { label: 'Right Kidney', def: 'Normal size. No hydronephrosis.', value: null, sel: false },
+                { label: 'IMPRESSION', def: 'impression', value: null, sel: false, heading: true },
+            ]);
+
+            function renderPS(fields) {
+                return fields.map(f => {
+                    const lbl = `<span class="d-lbl${f.heading ? ' d-heading' : ''}">${f.label}:</span>`;
+                    // Filled fields keep their red brackets — PowerScribe fields stay fields
+                    // when you dictate into them; only the content changes.
+                    const body = f.value !== null
+                        ? `<span class="d-br">[</span><span class="d-val">${f.value}</span><span class="d-br">]</span>`
+                        : `<span class="d-fld${f.sel ? ' d-sel' : ''}">[${f.def}]</span>`;
+                    return f.heading ? `<p>${lbl}</p><p>${body}</p>` : `<p>${lbl} ${body}</p>`;
+                }).join('');
+            }
+
+            function renderPlugin(fields) {
+                return fields.map(f => {
+                    const lbl = `<span class="d-plbl${f.heading ? ' d-heading' : ''}">${f.label}:</span>`;
+                    const body = f.value !== null
+                        ? `<span class="d-br">[</span><span class="d-val">${f.value}</span><span class="d-br">]</span>${f.sel ? '<span class="caret"></span>' : ''}`
+                        : `<span class="d-fld${f.sel ? ' d-sel' : ''}">[${f.def}]</span>`;
+                    return f.heading ? `<p>${lbl}</p><p>${body}</p>` : `<p>${lbl} ${body}</p>`;
+                }).join('');
+            }
+
+            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (reduced) { // static final frame, no animation
+                const done = makeFields();
+                done[0].value = 'The liver is normal in size and echotexture.';
+                done[1].value = 'Gallbladder is within normal limits.';
+                done[2].value = 'There is a 3.5 x 2 cm cyst.';
+                ps.innerHTML = renderPS(done);
+                plugin.innerHTML = renderPlugin(done);
+                voice.textContent = 'You dictate in the plugin; PowerScribe receives the report in real time.';
+                return;
+            }
+
+            const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+            async function run() {
+                const fields = makeFields();
+                const queue = [];
+                // You dictate in the PLUGIN (left, leads); PowerScribe follows one sync tick behind.
+                const push = () => { plugin.innerHTML = renderPlugin(fields); queue.push(renderPS(fields)); };
+                const sync = setInterval(() => { if (queue.length) ps.innerHTML = queue.shift(); }, 250);
+
+                voice.innerHTML = '&nbsp;';
+                fields[0].sel = true;
+                push();
+                await sleep(1400);
+
+                const utterances = [
+                    { idx: 0, say: '“the liver is normal in size and echotexture”', text: 'The liver is normal in size and echotexture.' },
+                    { idx: 1, say: '“gallbladder is within normal limits”', text: 'Gallbladder is within normal limits.' },
+                    { idx: 2, say: '“there is a three point five by two centimeter cyst”', text: 'There is a 3.5 x 2 cm cyst.' },
+                ];
+
+                for (const u of utterances) {
+                    if (u.idx > 0) {
+                        voice.textContent = '“next field”';
+                        fields[u.idx - 1].sel = false;
+                        fields[u.idx].sel = true;
+                        push();
+                        await sleep(1300);
+                    }
+                    voice.textContent = u.say;
+                    await sleep(600);
+                    const words = u.text.split(/(?<= )/);
+                    fields[u.idx].value = '';
+                    for (const w of words) {
+                        fields[u.idx].value += w;
+                        push();
+                        await sleep(150);
+                    }
+                    fields[u.idx].sel = false;
+                    push();
+                    await sleep(900);
+                }
+
+                voice.textContent = '— same words, same report. And none of it left your workstation.';
+                await sleep(6000);
+                clearInterval(sync);
+                run(); // loop
+            }
+            run();
+        })();
+
+        // Host-aware links: this exact page is also served at https://dictum-report.github.io
+        // (hospital proxies block dictum.report as a newly-registered domain, and the
+        // Proofpoint isolation browser blocks ALL downloads — GitHub passes those proxies
+        // untouched). On the mirror, downloads come from GitHub Releases via STABLE
+        // permalinks; the never-repoint-to-a-versioned-URL rule holds on both hosts.
+        const GH_RELEASES = 'https://github.com/dictum-report/dictum/releases';
+        const GH_DOWNLOAD = GH_RELEASES + '/latest/download';
+        const onMirror = location.hostname.endsWith('.github.io');
+        if (onMirror) {
+            document.getElementById('dl-button').href = GH_DOWNLOAD + '/Dictum.exe';
+            document.getElementById('adv-exe').href = GH_RELEASES;
+            // The ~3 GB offline zip exceeds GitHub's asset limit and only lives on
+            // dictum.report; keep it reachable (absolute) for non-blocked visitors.
+            document.getElementById('adv-zip').href = 'https://dictum.report/downloads/Dictum-latest.zip';
+            document.getElementById('dl-mirror').style.display = 'none';
+        }
+
+        // Progressive enhancement: decorate the download card from the release manifest.
+        // The download button ALWAYS points at the stable /downloads/Dictum.exe launcher
+        // (or the stable GitHub permalink on the mirror) — never repoint it to a
+        // versioned URL (a changing target resets the download reputation that
+        // suppresses the "isn't commonly downloaded" warning).
+        fetch('downloads/latest.json').then(r => r.json()).then(m => {
+            if (!m || !m.version) return;
+            document.getElementById('dl-version').textContent = 'Version ' + m.version;
+            if (m.setupSizeKB) document.getElementById('dl-size').textContent = '~' + m.setupSizeKB + ' KB';
+            if (m.setupSha256) document.getElementById('dl-sha').textContent = m.setupSha256;
+            if (!onMirror && m.exeUrl) document.getElementById('adv-exe').href = m.exeUrl;
+            if (onMirror && m.exeUrls && m.exeUrls.length > 1)
+                document.getElementById('adv-exe').href = m.exeUrls[m.exeUrls.length - 1];
+        }).catch(() => { /* static fallbacks already in the markup */ });
+    </script>
+</body>
+
+</html>
