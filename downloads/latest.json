@@ -1,17 +1,17 @@
 {
-    "version": "1.2.11.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.11.0.exe",
+    "version": "1.2.12.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.12.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.11.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.11.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.12.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.12.0.exe"
     ],
-    "exeSha256": "F4F7467B06763BD6F4FB7581A27B06C01E11D7AF4E9E0C86D04CEBF09360C47E",
+    "exeSha256": "D2CE669B54D2703CBE3C410A822D06FD68A7A36DF4CBC803C934E35AE0A230F3",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.11.0.zip",
-    "zipSha256": "87DCB2E1AADCD21431FB27920A2BB929E27714E9C0C5DD8BEA70CE9F4A6AC704",
-    "zipSizeMB": 3087,
-    "notes": "Fixes from field testing: releasing the PowerMic record button now reliably stops recording (your last words still get transcribed), and impression drafting works even when GPU acceleration cannot load (falls back to CPU automatically).",
-    "publishedUtc": "2026-07-08T23:20:49.8089750Z",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.12.0.zip",
+    "zipSha256": "8C8CF4244E6B4131FEA8E1AD03905FAF97C2CF4D6D7257C40579681C16C32D2B",
+    "zipSizeMB": 3107,
+    "notes": "GPU acceleration for (almost) every workstation: impression drafting now uses your graphics card via Vulkan when CUDA is unavailable - including older NVIDIA drivers, AMD, and Intel. After updating, run File > Download AI Models once to fetch the small (20 MB) GPU runtime.",
+    "publishedUtc": "2026-07-08T23:31:13.2217805Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
