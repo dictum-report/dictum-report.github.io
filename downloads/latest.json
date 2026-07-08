@@ -1,17 +1,17 @@
 {
-    "version": "1.2.4.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.4.0.exe",
+    "version": "1.2.5.0",
+    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.5.0.exe",
     "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.4.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.4.0.exe"
+        "https://dictum.report/downloads/Dictum-v1.2.5.0.exe",
+        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.5.0.exe"
     ],
-    "exeSha256": "6DCFAD2421DB711B7FCFBF2BBA78056EEDDA1A25C7DD03E2131932CEB13FCD36",
+    "exeSha256": "26C267ED09BF667CFB1039D946C7F2912057570336122971F06FC71D06342B7A",
     "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.4.0.zip",
-    "zipSha256": "CD4A50C8BCE7EE11324535DFF3386C052509A32577CAAEAEE93BBFB0A57CF765",
+    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.5.0.zip",
+    "zipSha256": "0868030496CB859B62C51F481BF9DB874C02C9DDFFCD1FC133AAE08CAD46E7EE",
     "zipSizeMB": 3087,
-    "notes": "New compact companion panel (the full editor is now hidden by default). Dictate (F9) and impression (F10) into PowerScribe are enabled by default - each has an off switch in the panel, and hotkeys are remappable in settings.json.",
-    "publishedUtc": "2026-07-08T20:30:02.5655288Z",
+    "notes": "Dictation upgrade: punctuation is now verbatim (say \"period\" for a period; nothing you did not say is inserted), dictating over a highlighted field value replaces it, and the PowerMic record button controls the mic (press-and-hold; the first button you press is learned as Record).",
+    "publishedUtc": "2026-07-08T21:16:23.7237042Z",
     "setupUrl": "https://dictum.report/downloads/Dictum.exe",
     "setupUrls": [
         "https://dictum.report/downloads/Dictum.exe",
