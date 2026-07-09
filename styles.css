@@ -1,14 +1,16 @@
-/* Dictum site — same theme family as the original My Radiology Report site:
-   Bootstrap-4-era palette (#007bff primary on #eff3f9, dark navy #010326 secondary),
-   Source Sans Pro body + Montserrat display, gradient hero, 1rem-radius cards. */
+/* Dictum site — theme family descends from the original My Radiology Report site
+   (Source Sans Pro body + Montserrat display, 1rem-radius cards) with a 2026 trust
+   pass: clinical blue #0a5ac2 primary, navy hero, dark navy #010326 secondary. */
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap");
 
 :root {
-    --primary: #007bff;
-    --primary-hi: #248dfe;
-    --primary-lo: #0069d9;
+    /* clinical blue family: deeper and less saturated than the old Bootstrap
+       default (#007bff), which read as template rather than product */
+    --primary: #0a5ac2;
+    --primary-hi: #1e6fd9;
+    --primary-lo: #08489c;
     --secondary: #010326;
     --secondary-hi: #252746;
     --body-bg: #eff3f9;
@@ -71,7 +73,7 @@ section { padding: 4.5rem 0; }
 .btn-primary {
     color: #fff;
     background: linear-gradient(180deg, var(--primary-hi), var(--primary));
-    box-shadow: 0 6px 18px rgba(0, 123, 255, .35);
+    box-shadow: 0 6px 18px rgba(10, 90, 194, .35);
 }
 
 .btn-primary:hover { background: linear-gradient(180deg, var(--primary-hi), var(--primary-lo)); }
@@ -93,7 +95,9 @@ section { padding: 4.5rem 0; }
 
 /* ------------------------------ Hero ------------------------------ */
 .bg-gradient-primary {
-    background: linear-gradient(180deg, var(--primary-hi), var(--primary)) repeat-x;
+    /* navy hero: institutional and calm; ties the hero to the site's own
+       navy (--secondary) instead of a bright consumer gradient */
+    background: linear-gradient(180deg, #1b3a6b, #0e2247) repeat-x;
     color: #fff;
 }
 
@@ -378,7 +382,8 @@ section { padding: 4.5rem 0; }
 
 .hero-points p { margin: 0; }
 
-.hero-points .hp-icon { flex: none; font-size: 1.35rem; line-height: 1.3; }
+.hero-points .hp-icon { flex: none; color: #fff; margin-top: .1rem; }
+.hero-points .hp-icon svg { width: 20px; height: 20px; display: block; }
 
 .hero-points strong { color: #fff; font-family: var(--font-display); }
 
@@ -853,7 +858,7 @@ section { padding: 4.5rem 0; }
 }
 .eol-strip p { margin: 0; font-size: .98rem; line-height: 1.5; }
 .eol-strip strong { color: #fff; }
-.eol-strip a { color: var(--primary-hi); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.eol-strip a { color: #7fb2f5; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .eol-strip a:hover { text-decoration: underline; }
 @media (max-width: 860px) {
     .eol-inner { grid-template-columns: 1fr; gap: .9rem; }
