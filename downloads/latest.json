@@ -1,22 +1,22 @@
 {
-    "version": "1.2.13.0",
-    "exeUrl": "https://dictum.report/downloads/Dictum-v1.2.13.0.exe",
-    "exeUrls": [
-        "https://dictum.report/downloads/Dictum-v1.2.13.0.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.13.0.exe"
-    ],
-    "exeSha256": "9202744F5860D678B1030A3AC6D1E3CD095F858D78619DA30FDCF65BAAC95E67",
-    "exeSizeMB": 81,
-    "zipUrl": "https://dictum.report/downloads/Dictum-v1.2.13.0.zip",
-    "zipSha256": "DD38F872D270FFA62C5C603284AF637AA43DF7CAED32B59AA31FDD990769CDBB",
-    "zipSizeMB": 3107,
-    "notes": "Dictum now keeps itself up to date automatically when opened, and the speech + impression engines warm up in the background after launch - the first press of F9/F10 is instant.",
-    "publishedUtc": "2026-07-08T23:53:50.1635909Z",
-    "setupUrl": "https://dictum.report/downloads/Dictum.exe",
-    "setupUrls": [
-        "https://dictum.report/downloads/Dictum.exe",
-        "https://github.com/dictum-report/dictum/releases/latest/download/Dictum.exe"
-    ],
-    "setupSha256": "3ABEDEFF020C7D05B57CB27617FA09B8934C4C965D9AE83A33C7F9EA71F2BD95",
-    "setupSizeKB": 47
+    "version":  "1.2.14.0",
+    "exeUrl":  "https://dictum.report/downloads/Dictum-v1.2.14.0.exe",
+    "exeUrls":  [
+                    "https://dictum.report/downloads/Dictum-v1.2.14.0.exe",
+                    "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.14.0.exe"
+                ],
+    "exeSha256":  "AF284537CDCF065C8FBC985129F86F6E1B45D108A168C60ADF585DEC344BBB79",
+    "exeSizeMB":  81,
+    "zipUrl":  "https://dictum.report/downloads/Dictum-v1.2.14.0.zip",
+    "zipSha256":  "BC8ECEF54E2E3B70118282C0921E627B160994B96594ABB6EB6D358DA751563F",
+    "zipSizeMB":  3107,
+    "notes":  "",
+    "publishedUtc":  "2026-07-09T15:22:13.0582755Z",
+    "setupUrl":  "https://dictum.report/downloads/Dictum.exe",
+    "setupUrls":  [
+                      "https://dictum.report/downloads/Dictum.exe",
+                      "https://github.com/dictum-report/dictum/releases/latest/download/Dictum.exe"
+                  ],
+    "setupSha256":  "3ABEDEFF020C7D05B57CB27617FA09B8934C4C965D9AE83A33C7F9EA71F2BD95",
+    "setupSizeKB":  47
 }
