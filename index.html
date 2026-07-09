@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dictum — a free companion for PowerScribe</title>
     <meta name="description"
-        content="A free PowerScribe companion for radiologists: a drop-in replacement for the PowerScribe microphone with a consistent offline speech engine, autocomplete inside the report, and one-keypress impression drafting. PHI never leaves your machine.">
+        content="A free PowerScribe companion for radiologists: offline AI dictation with no voice profile to drift, autocomplete inside the report, and one-keypress impression drafting. Works with PowerScribe 360 (even past end-of-life) and PowerScribe One. PHI never leaves your machine.">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
@@ -29,7 +29,36 @@
                 <img src="media/logo.svg" alt="" width="34" height="34">
                 <span>Dictum</span>
             </a>
-            <a class="nav-download" href="#download">Download</a>
+            <div class="hero-nav-right">
+                <div class="hipaa-seal" title="Dictum runs all AI models locally &mdash; zero PHI is ever sent out. No BAA needed: we never receive your data.">
+                    <svg viewBox="0 0 120 120" role="img"
+                         aria-label="100% local AI: all AI runs locally, zero PHI ever sent out">
+                        <defs>
+                            <linearGradient id="seal-gold" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#f9e08a"/>
+                                <stop offset=".45" stop-color="#e6bc45"/>
+                                <stop offset="1" stop-color="#b8860b"/>
+                            </linearGradient>
+                            <path id="seal-arc-top" d="M 26 60 A 34 34 0 0 1 94 60" fill="none"/>
+                            <path id="seal-arc-bottom" d="M 20 60 A 40 40 0 0 0 100 60" fill="none"/>
+                        </defs>
+                        <path fill="url(#seal-gold)" stroke="#9a7418" stroke-width="1"
+                              d="M60.0 2.0 L65.9 7.8 L72.9 3.5 L77.3 10.4 L85.2 7.7 L87.9 15.5 L96.2 14.7 L97.1 22.9 L105.3 23.8 L104.5 32.1 L112.3 34.8 L109.6 42.7 L116.5 47.1 L112.2 54.1 L118.0 60.0 L112.2 65.9 L116.5 72.9 L109.6 77.3 L112.3 85.2 L104.5 87.9 L105.3 96.2 L97.1 97.1 L96.2 105.3 L87.9 104.5 L85.2 112.3 L77.3 109.6 L72.9 116.5 L65.9 112.2 L60.0 118.0 L54.1 112.2 L47.1 116.5 L42.7 109.6 L34.8 112.3 L32.1 104.5 L23.8 105.3 L22.9 97.1 L14.7 96.2 L15.5 87.9 L7.7 85.2 L10.4 77.3 L3.5 72.9 L7.8 65.9 L2.0 60.0 L7.8 54.1 L3.5 47.1 L10.4 42.7 L7.7 34.8 L15.5 32.1 L14.7 23.8 L22.9 22.9 L23.8 14.7 L32.1 15.5 L34.8 7.7 L42.7 10.4 L47.1 3.5 L54.1 7.8 Z"/>
+                        <circle cx="60" cy="60" r="48" fill="none" stroke="#8a6d1d" stroke-width="1.4"/>
+                        <circle cx="60" cy="60" r="44" fill="none" stroke="#8a6d1d" stroke-width="1"
+                                stroke-dasharray="2 2.6"/>
+                        <text class="seal-ring">
+                            <textPath href="#seal-arc-top" startOffset="50%" text-anchor="middle">ALL AI RUNS LOCALLY</textPath>
+                        </text>
+                        <text class="seal-ring">
+                            <textPath href="#seal-arc-bottom" startOffset="50%" text-anchor="middle">ZERO PHI EVER SENT OUT</textPath>
+                        </text>
+                        <text class="seal-hipaa" x="60" y="58" text-anchor="middle">100%</text>
+                        <text class="seal-sub" x="60" y="70" text-anchor="middle">LOCAL AI</text>
+                    </svg>
+                </div>
+                <a class="nav-download" href="#download">Download</a>
+            </div>
         </nav>
 
         <div class="hero-inner">
@@ -37,23 +66,32 @@
             <p class="kicker">A free companion for PowerScribe&reg;</p>
             <h1>If you use PowerScribe, you should be using <em>this</em>.</h1>
             <p class="lede">
-                A drop-in replacement for the PowerScribe microphone. Press <strong>F9</strong> —
-                or the PowerMic button already in your hand — and a modern offline speech engine
-                puts the words straight into the open report, while autocomplete finishes your
-                sentences right in PowerScribe. Nothing you dictate ever leaves your workstation.
+                Dictum runs beside PowerScribe and upgrades it in three ways &mdash;
+                installed in five minutes, no IT ticket, and nothing you dictate ever
+                leaves your workstation.
             </p>
-            <div class="hero-impression">
-                <span class="hi-icon">&#10024;</span>
-                <p><strong>Press <kbd>F10</kbd> — your impression writes itself.</strong>
-                    An on-device medical AI drafts the IMPRESSION from the findings you just
-                    dictated — your own words, synthesized on your workstation, placed in the
-                    report as a draft for your review.</p>
-            </div>
+            <ul class="hero-points">
+                <li><span class="hp-icon">&#127908;</span>
+                    <p><strong>Dictation that never drifts.</strong>
+                        Press <kbd>F9</kbd> &mdash; or the PowerMic button already in your
+                        hand &mdash; and a modern offline speech engine puts the words straight
+                        into the open report. No voice profile to train, corrupt, or retrain:
+                        the same sentence produces the same text, every time.</p></li>
+                <li><span class="hp-icon">&#10024;</span>
+                    <p><strong>Impressions draft themselves.</strong>
+                        Press <kbd>F10</kbd> and an on-device medical AI drafts the IMPRESSION
+                        from the findings you just dictated &mdash; your own words, placed in
+                        the report as a draft for your review.</p></li>
+                <li><span class="hp-icon">&#9000;&#65039;</span>
+                    <p><strong>Autocomplete that knows your reports.</strong>
+                        Dictum learns your phrasing and finishes your sentences right in
+                        PowerScribe &mdash; and imports your own AutoText in one click.</p></li>
+            </ul>
             <div class="hero-actions">
                 <a class="btn btn-light-solid" href="#download">Download for Windows</a>
                 <a class="btn btn-ghost" href="#why">Why switch?</a>
             </div>
-            <p class="hero-fineprint">Free during the pilot &middot; 64-bit Windows 10/11 &middot; no admin rights needed</p>
+            <p class="hero-fineprint">Free during the pilot &middot; built by a practicing radiologist &middot; 64-bit Windows 10/11 &middot; no admin rights needed</p>
         </div>
 
         <!-- Minimal-mode demo: you work in PowerScribe; Dictum is the small panel -->
@@ -107,6 +145,19 @@
         </div>
     </header>
 
+    <!-- ============================== PS360 end-of-life strip ============================== -->
+    <section id="eol" class="eol-strip">
+        <div class="container eol-inner">
+            <p class="eol-lead"><strong>Still on PowerScribe 360?</strong> Microsoft is retiring it —
+                maintenance ends August&nbsp;2026, end-of-life August&nbsp;2027 — and the upgrade
+                means new subscriptions and retraining your voice profile from scratch.</p>
+            <p class="eol-action"><strong>Dictum works with your PowerScribe&nbsp;360 exactly as it is.</strong>
+                Nothing to migrate, nobody to ask: modern offline dictation, autocomplete, and AI
+                impressions on the system you already have — today, free.
+                <a href="#download">Get Dictum&nbsp;&rarr;</a></p>
+        </div>
+    </section>
+
     <!-- ============================== Pain points ============================== -->
     <section id="why">
         <div class="container">
@@ -131,8 +182,9 @@
                     <p>Start a word in PowerScribe and a suggestion popup follows your caret —
                         <kbd>Tab</kbd> accepts, <kbd>Esc</kbd> dismisses. Dictum quietly learns your
                         vocabulary and phrasing from the reports you write — <strong>locally, on disk you
-                        control</strong> — so after a few days your own sentences finish themselves. A
-                        curated radiology corpus covers the rest.</p>
+                        control</strong> — so after a few days your own sentences finish themselves.
+                        <strong>Import your own PowerScribe AutoText in one click</strong>; a curated
+                        radiology corpus covers the rest.</p>
                 </article>
 
                 <article class="pain-card">
@@ -165,12 +217,14 @@
             </div>
 
             <p class="research-note">
-                &#128196; Peer-reviewed roots: Dictum builds on its author's commentary in
-                <em>Radiology: Artificial Intelligence</em> —
+                &#128196; The problem is documented, not anecdotal: in peer-reviewed studies,
+                <a href="https://ajronline.org/doi/abs/10.2214/AJR.11.6691" target="_blank" rel="noopener">
+                23% of speech-recognition radiology reports contained at least one major error,
+                versus 4% with transcriptionists</a> (<em>AJR</em>, 2011). Dictum builds on its
+                author's commentary in <em>Radiology: Artificial Intelligence</em> —
                 <a href="https://pubs.rsna.org/doi/10.1148/ryai.220105" target="_blank" rel="noopener">
                     &ldquo;No Knew Typos: Modernizing Radiology Dictation&rdquo;</a> (RSNA, 2022) —
-                on using transformer language models to catch the errors radiology
-                speech recognition makes.
+                on using transformer language models to catch exactly these errors.
             </p>
         </div>
     </section>
@@ -282,9 +336,12 @@
                     <p class="dl-hash">SHA-256 (Dictum.exe inside the zip): <code id="dl-sha">published in downloads/latest.json</code></p>
                     <p class="dl-note">
                         Dictum installs for your user account only — nothing system-wide, no IT
-                        ticket. On first launch it fetches the app and offers a one-time download
-                        of its on-device AI models (~3&nbsp;GB): the speech and impression AI live
-                        entirely on your workstation, so nothing you dictate ever leaves it.
+                        ticket, the same way Chrome or Zoom install. On first launch it fetches the
+                        app and offers a one-time download of its on-device AI models (~3&nbsp;GB):
+                        the speech and impression AI live entirely on your workstation, so nothing
+                        you dictate ever leaves it. <strong>No BAA, no legal review, no data-sharing
+                        agreement</strong> — there's no data to share. And every feature is a
+                        checkbox: untick them and PowerScribe is exactly as you left it.
                     </p>
                     <p class="dl-note" style="font-size:.85em">
                         Advanced: <a id="adv-exe" href="downloads/latest.json">standalone full exe</a>
