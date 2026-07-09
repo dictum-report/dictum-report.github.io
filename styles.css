@@ -774,6 +774,24 @@ section { padding: 4.5rem 0; }
     margin-top: 1.2rem;
 }
 
+/* pilot-updates email capture */
+.subscribe { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--light); }
+.subscribe-label { display: block; font-weight: 700; color: var(--heading); margin-bottom: .5rem; }
+.subscribe-row { display: flex; gap: .6rem; flex-wrap: wrap; }
+.subscribe-row input[type="email"] {
+    flex: 1 1 220px;
+    padding: .65rem .9rem;
+    border: 1px solid var(--light);
+    border-radius: .6rem;
+    font: inherit;
+    min-width: 0;
+}
+.subscribe-row input[type="email"]:focus { outline: 2px solid var(--primary); border-color: var(--primary); }
+.subscribe-btn { padding: .65rem 1.3rem; white-space: nowrap; }
+.subscribe-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.subscribe-note { font-size: .8rem; color: var(--text); margin: .6rem 0 0; }
+.subscribe-done { font-weight: 600; color: var(--heading); margin: 0; }
+
 .install-steps {
     margin: 0;
     padding-left: 1.4rem;

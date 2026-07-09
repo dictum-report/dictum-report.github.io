@@ -294,6 +294,20 @@
                         Hospital network blocking this page or the download? Use the mirror:
                         <a href="https://dictum-report.github.io">dictum-report.github.io</a>
                     </p>
+                    <form class="subscribe" id="subscribe-form" novalidate>
+                        <label class="subscribe-label" for="subscribe-email">Get pilot updates</label>
+                        <div class="subscribe-row">
+                            <input type="email" id="subscribe-email" name="email" required
+                                   placeholder="you@example.com" autocomplete="email"
+                                   aria-label="Email address for pilot updates">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off"
+                                   class="subscribe-hp" aria-hidden="true">
+                            <button type="submit" class="btn btn-primary subscribe-btn">Notify me</button>
+                        </div>
+                        <p class="subscribe-note" id="subscribe-note">A short note when something
+                            meaningful ships. No spam, no tracking pixels — reply to any email to
+                            unsubscribe.</p>
+                    </form>
                 </div>
                 <ol class="install-steps">
                     <li><strong>Open</strong> <code>Dictum.zip</code> and run <code>Dictum.exe</code> inside — it sets itself up in seconds and starts. It finds your open PowerScribe report by itself.</li>
@@ -321,6 +335,48 @@
     </footer>
 
     <script>
+        // ---- Pilot-updates email capture. Posts form-encoded (no preflight) to the
+        // first-party endpoint on dictum.report — works from the github.io mirror too
+        // (CORS-allowlisted). If the network blocks dictum.report entirely, fall back
+        // to a mailto link so no one is stranded. No cookies, nothing third-party. ----
+        (function () {
+            const form = document.getElementById('subscribe-form');
+            const note = document.getElementById('subscribe-note');
+            if (!form || !note) return;
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const email = form.email.value.trim();
+                if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                    note.textContent = 'That doesn’t look like an email address — mind checking it?';
+                    return;
+                }
+                const btn = form.querySelector('button');
+                btn.disabled = true; btn.textContent = 'Adding…';
+                try {
+                    const res = await fetch('https://dictum.report/api/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: 'email=' + encodeURIComponent(email) +
+                              '&website=' + encodeURIComponent(form.website.value)
+                    });
+                    const data = await res.json();
+                    if (data.ok) {
+                        form.innerHTML = '<p class="subscribe-done">You’re on the list — thanks. ' +
+                            'A short note when something meaningful ships.</p>';
+                    } else {
+                        note.textContent = data.error || 'Something went wrong — please try again.';
+                        btn.disabled = false; btn.textContent = 'Notify me';
+                    }
+                } catch (err) {
+                    // network blocked (hospital proxy) or endpoint down — mailto fallback
+                    note.innerHTML = 'This network can’t reach our server. Email ' +
+                        '<a href="mailto:aabajian@gmail.com?subject=Dictum%20pilot%20updates&body=' +
+                        encodeURIComponent(email) + '">aabajian@gmail.com</a> and we’ll add you by hand.';
+                    btn.disabled = false; btn.textContent = 'Notify me';
+                }
+            });
+        })();
+
         // ---- Hero demo: minimal mode. You work in PowerScribe; Dictum is the small
         // companion panel. Dictation, autocomplete, and the impression draft all land
         // directly in the PowerScribe window. Pure simulation. ----
