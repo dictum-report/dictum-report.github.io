@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why Your PowerScribe Voice Profile Keeps Drifting (and What Actually Fixes It) | Dictum</title>
+    <meta name="description" content="PowerScribe recognition that was fine for years suddenly isn't. Here is why voice profiles degrade, what actually fixes them, and what the error-rate literature says.">
+    <link rel="canonical" href="https://dictum.report/powerscribe-voice-profile-drift.html">
+    <link rel="icon" href="media/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+        .article h1 { margin-bottom: .25em; line-height: 1.25; }
+        .article h2 { margin-top: 1.6em; font-size: 1.2rem; }
+        .article p, .article li { line-height: 1.65; }
+        .article .byline { color: #666; font-size: .9em; margin-bottom: 2em; }
+        .article .cta { margin-top: 2.5em; padding: 20px 24px; background: #f2f7ff;
+                        border: 1px solid #cfe2ff; border-radius: 8px; }
+        .article .cta p { margin: .4em 0; }
+        .article-nav { display: flex; align-items: center; justify-content: space-between;
+                       max-width: 760px; margin: 0 auto; padding: 18px 20px;
+                       border-bottom: 1px solid #e4e4e4; }
+        .article-nav a { display: flex; align-items: center; gap: 8px; font-weight: 600;
+                         color: #010326; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="article-nav">
+        <a href="index.html">
+            <img src="media/logo.svg" alt="" width="26" height="26"> Dictum
+        </a>
+        <a href="index.html#download">Download</a>
+    </nav>
+
+    <main class="article">
+        <h1>Why your PowerScribe voice profile keeps drifting (and what actually fixes it)</h1>
+        <p class="byline">Aaron Abajian, MD · practicing radiologist · July 9, 2026</p>
+
+        <p>Every PowerScribe user knows the pattern. A word you have dictated cleanly for
+        years suddenly comes out wrong. You retrain it, it behaves for a week, then it
+        drifts back. One radiologist documented keeping
+        <a href="https://www.benwhite.com/radiology/making-the-most-of-powerscribe/">seven
+        different auto-corrects for "disc osteophyte complex"</a>. If that sounds
+        familiar, the problem is not your voice. It is the profile.</p>
+
+        <h2>What the profile actually is</h2>
+        <p>PowerScribe's recognition engine keys everything to a per-user voice profile:
+        a statistical model of your voice, vocabulary, and correction history that
+        updates itself continuously as you work. The idea is that it gets better with
+        use. The reality is that it is a mutable file that accumulates damage, and there
+        is no undo button.</p>
+
+        <h2>The four ways profiles degrade</h2>
+        <ul>
+            <li><strong>Bad corrections get learned.</strong> Corrections you make while
+                the mic is failing, the room is loud, or you are hoarse are folded into
+                the model with the same weight as good ones. The profile faithfully
+                learns the noise.</li>
+            <li><strong>Corruption.</strong> A crash mid-write, a network hiccup while a
+                roaming profile syncs between reading rooms, a full disk. Large hospital
+                IT departments maintain "poor voice recognition" troubleshooting guides
+                because this happens routinely, not rarely.</li>
+            <li><strong>The audio path changes underneath you.</strong> A Windows update,
+                a new audio driver, a swapped microphone. Any of these changes what the
+                engine hears without changing the profile that interprets it. Users on
+                the KnowBrainer forums reported accuracy dropping roughly threefold
+                <a href="https://forums.knowbrainer.com/forum/microphones-and-sound-cards/10195">after
+                a Windows 11 update forced a mic retrain</a>.</li>
+            <li><strong>Quiet acceptance teaches wrong words.</strong> Every time you let
+                a near-miss through because you are busy (and you are always busy), you
+                cast a small vote for the wrong word.</li>
+        </ul>
+
+        <h2>This is measured, not imagined</h2>
+        <p>Speech-recognition error rates in radiology are peer-reviewed. An AJR study
+        found at least one major error in
+        <a href="https://ajronline.org/doi/abs/10.2214/AJR.11.6691">23% of
+        speech-recognition reports, versus 4% with conventional transcription</a> (35% in
+        breast MRI). An earlier JACR study of finalized reports put the error rate at
+        <a href="https://pubmed.ncbi.nlm.nih.gov/19027683/">22%</a>. Those are signed
+        reports, in the chart.</p>
+
+        <h2>What actually helps</h2>
+        <ul>
+            <li><strong>Checkpoint a known-good profile.</strong> When recognition is
+                working well, ask your PowerScribe admin to back up your profile. When it
+                degrades, restoring a checkpoint beats weeks of incremental patching.</li>
+            <li><strong>Re-run the audio check after any change.</strong> New mic, new
+                workstation, any Windows update: run the microphone setup again before
+                trusting a full worklist to it.</li>
+            <li><strong>Keep the physical setup constant.</strong> Same mic, same
+                distance, same gain. A dying microphone quietly poisons the profile for
+                weeks before it fails outright.</li>
+            <li><strong>Correct properly or not at all.</strong> Retrain problem words
+                through the vocabulary tools rather than typing over the mistake.
+                Typed-over errors teach the engine nothing.</li>
+            <li><strong>Know when to stop patching.</strong> If accuracy has fallen off a
+                cliff, a fresh profile with one careful initial training usually beats
+                months of fighting a damaged one. Ask IT; you likely cannot reset it
+                yourself.</li>
+        </ul>
+
+        <h2>The structural problem</h2>
+        <p>Notice that every fix above is maintenance. The profile will drift again,
+        because continuous self-modification is the design. You are not doing anything
+        wrong; you are tending a model that changes every day you use it.</p>
+
+        <div class="cta">
+            <p><strong>There is another way to do this.</strong> I am a practicing
+            radiologist, and I built <a href="index.html">Dictum</a>: a free companion
+            app that runs a modern offline speech model directly on your PowerScribe
+            workstation. It has no voice profile at all. The same sentence produces the
+            same text, today and next year, and nothing you dictate ever leaves the
+            machine. It installs in about five minutes with no admin rights and works
+            alongside PowerScribe 360 and PowerScribe One.</p>
+            <p><a href="index.html#download">Download Dictum</a> (free). If your hospital
+            network blocks this site, use the
+            <a href="https://dictum-report.github.io">GitHub mirror</a>.</p>
+        </div>
+
+        <p style="margin-top:2em; font-size:.95em;">Related:
+        <a href="powerscribe-360-end-of-life.html">PowerScribe 360 end of life: what
+        radiologists need to know</a></p>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                <img src="media/logo.svg" alt="" width="20" height="20">
+                My Radiology Report &middot; built by a practicing radiologist
+            </p>
+            <p class="footer-small">
+                PowerScribe&reg; is a registered trademark of Nuance Communications, Inc.
+                This independent project is not affiliated with or endorsed by Nuance.
+                Dictum processes everything locally; this website sets no cookies.
+                &middot; <a href="privacy.html">Privacy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

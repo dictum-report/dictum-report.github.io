@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dictum.report/sitemap.xml
