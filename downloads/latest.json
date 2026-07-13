@@ -1,14 +1,14 @@
 {
-    "version":  "1.2.26.0",
-    "exeUrl":  "https://dictum.report/downloads/Dictum-v1.2.26.0.exe",
+    "version":  "1.2.27.0",
+    "exeUrl":  "https://dictum.report/downloads/Dictum-v1.2.27.0.exe",
     "exeUrls":  [
-                    "https://dictum.report/downloads/Dictum-v1.2.26.0.exe",
-                    "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.26.0.exe"
+                    "https://dictum.report/downloads/Dictum-v1.2.27.0.exe",
+                    "https://github.com/dictum-report/dictum/releases/latest/download/Dictum-v1.2.27.0.exe"
                 ],
-    "exeSha256":  "9109B67A61D4BCF57C843AF35411217DF78DA3B2674361D7B95E7D3C5F79B787",
+    "exeSha256":  "4FAD2277417282ED6D98E3CFC096CCC6360F40D2869B7F5665B043B21DF26523",
     "exeSizeMB":  81,
     "notes":  "",
-    "publishedUtc":  "2026-07-13T00:35:15.2589226Z",
+    "publishedUtc":  "2026-07-13T17:51:13.4123334Z",
     "setupUrl":  "https://dictum.report/downloads/Dictum.exe",
     "setupUrls":  [
                       "https://dictum.report/downloads/Dictum.exe",
