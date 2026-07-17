@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Export Your PowerScribe Templates (Without Asking IT) | Dictum</title>
+    <meta name="description" content="PowerScribe has no export button for radiologists: AutoText export lives in the admin portal. Here is how to download your own templates and macros to a folder in about five minutes, using Dictum.">
+    <link rel="canonical" href="https://dictum.report/export-powerscribe-templates.html">
+    <link rel="icon" href="media/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+        .article h1 { margin-bottom: .25em; line-height: 1.25; }
+        .article h2 { margin-top: 1.6em; font-size: 1.2rem; }
+        .article p, .article li { line-height: 1.65; }
+        .article .byline { color: #666; font-size: .9em; margin-bottom: 2em; }
+        .article .cta { margin-top: 2.5em; padding: 20px 24px; background: #f2f7ff;
+                        border: 1px solid #cfe2ff; border-radius: 8px; }
+        .article .cta p { margin: .4em 0; }
+        .article ol.steps li { margin-bottom: .8em; }
+        .article code { background: #f0f0f0; padding: 1px 5px; border-radius: 4px;
+                        font-size: .92em; }
+        .article-nav { display: flex; align-items: center; justify-content: space-between;
+                       max-width: 760px; margin: 0 auto; padding: 18px 20px;
+                       border-bottom: 1px solid #e4e4e4; }
+        .article-nav a { display: flex; align-items: center; gap: 8px; font-weight: 600;
+                         color: #010326; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="article-nav">
+        <a href="index.html">
+            <img src="media/logo.svg" alt="" width="26" height="26"> Dictum
+        </a>
+        <a href="index.html#download">Download</a>
+    </nav>
+
+    <main class="article">
+        <h1>How to export your PowerScribe templates (without asking IT)</h1>
+        <p class="byline">Aaron Abajian, MD · practicing radiologist · July 16, 2026</p>
+
+        <p>Your AutoText library is years of accumulated work: report templates tuned to
+        your reading style, modules for every protocol variation, macros for the phrases
+        you dictate fifty times a day. With
+        <a href="powerscribe-360-end-of-life.html">PowerScribe 360 heading to end of
+        life</a>, a lot of radiologists want a copy of that library. Before a migration,
+        before a job change, or simply as a backup.</p>
+
+        <p>Here is the catch: PowerScribe will not let you take it.</p>
+
+        <h2>There is no export button in your PowerScribe</h2>
+        <p>Open the AutoText Editor in the PowerScribe client you use every day and look
+        at what it offers: create, edit, clone, delete. No export. That is not an
+        oversight in your site's configuration. Exporting AutoText is documented as an
+        administrator function, performed in the web-based
+        <a href="https://isupportcontent.nuance.com/healthcare/Admin_Portal_Help/Introduction_to_AutoText.htm">Administrator
+        Portal</a>, which requires admin rights your radiologist account does not have.
+        The admin guides for both
+        <a href="https://isupportcontent.nuance.com/healthcare/documents/sales/opmanual/3900/L-3906/chapt12.pdf">PowerScribe
+        360</a> and PowerScribe One describe the Export feature exclusively for
+        administrators.</p>
+
+        <p>In practice that means filing a ticket, waiting for someone in IT with portal
+        access, and hoping the request does not fall into a queue. For templates you
+        wrote yourself.</p>
+
+        <h2>Your account can already read them. Dictum uses that.</h2>
+        <p><a href="index.html">Dictum</a> is a free companion app that runs next to
+        PowerScribe on your reporting workstation. Among other things, it can sign into
+        the same PowerScribe server your reporting client talks to, using your own
+        PowerScribe username and password, and download the AutoText your account owns:
+        templates, modules, and macros. No admin rights, no ticket. Everything happens on
+        your workstation, over the same hospital network PowerScribe itself uses.</p>
+
+        <h2>Step by step: templates to a folder in about five minutes</h2>
+        <ol class="steps">
+            <li><strong>Download Dictum</strong> from <a href="index.html#download">the
+                download page</a> (free, installs without admin rights). If your hospital
+                network blocks this site, use the
+                <a href="https://dictum-report.github.io">GitHub mirror</a>.</li>
+            <li><strong>Import your library.</strong> Click the <strong>⋯</strong> menu
+                on the Dictum widget and choose <em>Import PowerScribe Templates &amp;
+                Macros…</em>. Sign in with the same username and password you use for
+                PowerScribe (Dictum usually detects your server address automatically).
+                Dictum downloads faithful copies of your templates, modules, and macros
+                onto your workstation.</li>
+            <li><strong>Export them.</strong> Click <strong>⋯</strong> again and choose
+                <em>Export My PowerScribe Templates…</em>. You can open the folder that
+                holds the imported copies, or write them out in the format you want:
+                <ul>
+                    <li><strong>Plain text</strong> (the default): one readable .txt file
+                        per template. Opens in Notepad, Word, anything. Pick-list fields
+                        are preserved as
+                        <code>[field name: option 1/option 2/...]</code> so you can see
+                        every blank and every choice your template offered. You can
+                        bundle the text files into a single <strong>.zip</strong> to
+                        archive or email to yourself.</li>
+                    <li><strong>PowerScribe XML</strong>: one AutoText export file in the
+                        same format the admin portal produces. A PowerScribe
+                        administrator at your next site can import it, and Dictum can
+                        read it back too.</li>
+                </ul>
+            </li>
+            <li><strong>Done.</strong> Dictum opens the exported files in Explorer.
+                Copy them to a USB drive, your home directory, wherever your hospital's
+                policies allow.</li>
+        </ol>
+
+        <h2>Common questions</h2>
+        <p><strong>Is this allowed?</strong> Dictum signs in as you and downloads only
+        the AutoText your own account owns, exactly what the PowerScribe client shows
+        you every day. Nothing is sent anywhere: the files land on the workstation you
+        are sitting at. Check your institution's policies on moving files off the
+        workstation, as you would with any document.</p>
+        <p><strong>Is there patient data in templates?</strong> Templates and macros are
+        boilerplate you wrote before any patient was involved. They are not reports and
+        contain no patient information (assuming you did not paste any into a template
+        yourself; the plain-text export makes that easy to check).</p>
+        <p><strong>Does this work on PowerScribe One?</strong> Yes. The import works
+        against both PowerScribe 360 and PowerScribe One servers.</p>
+
+        <div class="cta">
+            <p><strong>Dictum does more than rescue your templates.</strong> I am a
+            practicing radiologist, and I built Dictum as a free companion app for
+            PowerScribe: a modern offline speech model with no voice profile to drift,
+            voice macros for your imported AutoText, and AI drafting that runs entirely
+            on your workstation. It installs in about five minutes with no admin rights
+            and works alongside PowerScribe 360 and PowerScribe One.</p>
+            <p><a href="index.html#download">Download Dictum</a> (free). If your hospital
+            network blocks this site, use the
+            <a href="https://dictum-report.github.io">GitHub mirror</a>.</p>
+        </div>
+
+        <p style="margin-top:2em; font-size:.95em;">Related:
+        <a href="powerscribe-360-end-of-life.html">PowerScribe 360 end of life: what
+        radiologists need to know</a> ·
+        <a href="powerscribe-voice-profile-drift.html">Why your PowerScribe voice
+        profile keeps drifting (and what actually fixes it)</a></p>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                <img src="media/logo.svg" alt="" width="20" height="20">
+                My Radiology Report &middot; built by a practicing radiologist
+            </p>
+            <p class="footer-small">
+                PowerScribe&reg; is a registered trademark of Nuance Communications, Inc.
+                This independent project is not affiliated with or endorsed by Nuance.
+                Dictum processes everything locally; this website sets no cookies.
+                &middot; <a href="privacy.html">Privacy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
