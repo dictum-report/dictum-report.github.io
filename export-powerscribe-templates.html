@@ -20,6 +20,10 @@
         .article ol.steps li { margin-bottom: .8em; }
         .article code { background: #f0f0f0; padding: 1px 5px; border-radius: 4px;
                         font-size: .92em; }
+        .article .shot { display: block; max-width: 100%; height: auto; margin: 14px 0 6px;
+                         border: 1px solid #d9d9d9; border-radius: 8px;
+                         box-shadow: 0 2px 10px rgba(1,3,38,.10); }
+        .article .shot-caption { color: #666; font-size: .85em; margin: 0 0 10px; }
         .article-nav { display: flex; align-items: center; justify-content: space-between;
                        max-width: 760px; margin: 0 auto; padding: 18px 20px;
                        border-bottom: 1px solid #e4e4e4; }
@@ -83,18 +87,30 @@
                 Macros…</em>. Sign in with the same username and password you use for
                 PowerScribe (Dictum usually detects your server address automatically).
                 Dictum downloads faithful copies of your templates, modules, and macros
-                onto your workstation.</li>
+                onto your workstation.
+                <img class="shot" src="media/export-step1-menu.png" width="1220" height="1138"
+                     loading="lazy"
+                     alt="The Dictum widget with its menu open, showing the Import PowerScribe Templates and Export My PowerScribe Templates menu items">
+                <span class="shot-caption">Import and Export both live in the widget's
+                ⋯ menu.</span></li>
             <li><strong>Export them.</strong> Click <strong>⋯</strong> again and choose
-                <em>Export My PowerScribe Templates…</em>. You can open the folder that
+                <em>Export My PowerScribe Templates…</em>.
+                <img class="shot" src="media/export-step2-dialog.png" width="1080" height="647"
+                     loading="lazy"
+                     alt="Dictum's export dialog: Open Templates Folder button, plain text or PowerScribe XML format choice, leave-fields-empty and zip checkboxes">
+                <span class="shot-caption">The export dialog.</span>
+                You can open the folder that
                 holds the imported copies, or write them out in the format you want:
                 <ul>
                     <li><strong>Plain text</strong> (the default): one readable .txt file
                         per template. Opens in Notepad, Word, anything. Pick-list fields
                         are preserved as
                         <code>[field name: option 1/option 2/...]</code> so you can see
-                        every blank and every choice your template offered. You can
-                        bundle the text files into a single <strong>.zip</strong> to
-                        archive or email to yourself.</li>
+                        every blank and every choice your template offered. Prefer a
+                        cleaner read? Tick "Leave fields empty" and every field becomes
+                        just <code>[ ]</code>. You can bundle the text files into a
+                        single <strong>.zip</strong> to archive or email to
+                        yourself.</li>
                     <li><strong>PowerScribe XML</strong>: one AutoText export file in the
                         same format the admin portal produces. A PowerScribe
                         administrator at your next site can import it, and Dictum can
@@ -103,7 +119,12 @@
             </li>
             <li><strong>Done.</strong> Dictum opens the exported files in Explorer.
                 Copy them to a USB drive, your home directory, wherever your hospital's
-                policies allow.</li>
+                policies allow.
+                <img class="shot" src="media/export-step3-notepad.png" width="836" height="656"
+                     loading="lazy"
+                     alt="An exported template open in Notepad: plain readable report text with fields shown as [field name: option/option]">
+                <span class="shot-caption">An exported template in Notepad: plain
+                text, with every field and its choices preserved.</span></li>
         </ol>
 
         <h2>Common questions</h2>
