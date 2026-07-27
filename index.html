@@ -8,6 +8,14 @@
     <meta name="description"
         content="A free PowerScribe companion for radiologists: offline AI dictation with no voice profile to drift, autocomplete inside the report, and one-keypress impression drafting. Works with PowerScribe 360 (even past end-of-life) and PowerScribe One. PHI never leaves your machine.">
 
+    <!-- Required, not optional: this exact page is also served at dictum-report.github.io
+         (the proxy-blocked-hospital mirror). Without this, Google saw two identical
+         homepages, picked its own canonical, and reported "Duplicate without
+         user-selected canonical" for dictum.report. The mirror inherits this tag and
+         so defers its ranking signals to the primary domain, while still serving
+         blocked users normally. -->
+    <link rel="canonical" href="https://dictum.report/">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
@@ -18,6 +26,9 @@
     <meta name="theme-color" content="#0e2247">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Cookieless analytics. Stores nothing on the device; see privacy.html. -->
+    <script async src="analytics.js"></script>
 </head>
 
 <body>
@@ -278,7 +289,7 @@
                     <p>Two things: downloading the app and its AI models (from dictum.report,
                         GitHub, Hugging Face, nuget.org), and a once-daily version check.
                         Dictation audio and report text are processed on the workstation and
-                        are never transmitted. There is no account, no telemetry, no analytics.</p>
+                        are never transmitted. The app has no account, no telemetry, no analytics.</p>
                 </div>
                 <div class="spec-item">
                     <h4>No BAA required</h4>
@@ -443,7 +454,7 @@
         // ---- Pilot-updates email capture. Posts form-encoded (no preflight) to the
         // first-party endpoint on dictum.report — works from the github.io mirror too
         // (CORS-allowlisted). If the network blocks dictum.report entirely, fall back
-        // to a mailto link so no one is stranded. No cookies, nothing third-party. ----
+        // to a mailto link so no one is stranded. No cookies; this form is first-party only. ----
         (function () {
             const form = document.getElementById('subscribe-form');
             const note = document.getElementById('subscribe-note');
